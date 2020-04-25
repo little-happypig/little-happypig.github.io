@@ -716,8 +716,7 @@
 <a id="more"></a>
 <p>现在的使用方法是：在next主题的_config.xml中搜索fontawesome，并更改属性<code>fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css</code>，注意里面的文档是all.min.css，而不是font-awesom.min.css。<br>但是这样更改之后还是会出现方框乱码，原因是next默认使用的fa的类，而有时候我们需要使用fab或其他的类。所以需要修改一下源代码。<br>找到layout/_macro/menu/menu-item.swig，定位class=”menu-item-icon，将后面的“fa fa-fw fa-”删去。以后再修改icon不能只加一个名字了。可以像我这样修改：<code>assorted: /assorted || fa fa-fw fa-layer-group</code>。<br>可以看到我将icon的名称补全了。如果想用fab的类，可以像这样修改：<code>python: /python || fab fa-fw fa-python</code>。以此类推。</p>
 <p>这样修改以后，如果不想用fontawesome了，想用其他的icon库，改起来也很方便。</p>
-<p>layout/_macro/menu/menu-item.swig被layout/_partials/header/sub-menu.swig引用。</p>
-<p>另外由于fontawesome版本改动，社交软件的icon也需要更改，在_config.xml中搜索github，将icon改为<code>fab fa-fw fa-github</code>。找到ayout/_macro/siderbar.swig，搜索fa fa-fw fa-，看看定位的地点上面是不是<code>{百分号 if theme.social_icons.enable 百分号}</code>。是的话将fa fa-fw fa-删除。</p>
+<p>layout/_macro/menu/menu-item.swig被layout/_partials/header/sub-menu.swig引用。<br>另外由于fontawesome版本改动，社交软件的icon也需要更改，在_config.xml中搜索github，将icon改为<code>fab fa-fw fa-github</code>。找到ayout/_macro/siderbar.swig，搜索fa fa-fw fa-，看看定位的地点上面是不是<code>{百分号 if theme.social_icons.enable 百分号}</code>。是的话将fa fa-fw fa-删除。</p>
 ]]></content>
       <categories>
         <category>个人博客</category>
@@ -976,27 +975,25 @@
 <li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
 </ol>
 <a id="more"></a>
-
-
-<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
 <ol start="2">
-<li>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</li>
-</ol>
-<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
-<ol start="3">
-<li>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</li>
+<li><p>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
+</li>
+<li><p>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</p>
+</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
 
-<p><strong>建议使用 &lt; !– more –&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</strong></p>
-<p>特别注意的是在Next的高版本上<br>next7.6版本关于设置阅读全文</p>
-<p>LIYUANWAISPRING 2019-12-05 17:00:03  614  收藏<br>展开<br>网上查了好多资料始终都没得到解决如何去设置“阅读全文”。最后查了最细的next7.6文档才发现还要下载插件 然后在主题配置文件_config.yml配置下就好了。<br>一，在博客目录下执行</p>
+<p>特别注意的是在Next的高版本上<br>next 7.6版文档本关于设置阅读全文，首先要下载插件 然后在主题配置文件_config.yml配置下就好了。</p>
+<p>一，在博客目录下执行</p>
 <p>npm install hexo-excerpt –save</p>
 <p>二，在站点配置文件_config.yml添加</p>
 <p>excerpt:<br>depth: 10<br>excerpt_excludes: []<br>more_excludes: []<br>hideWholePostExcerpts: true</p>
 <p>next7.6最新文档添加链接描述</p>
 <p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
-<h1 id="Automatically-excerpt-description-in-homepage-as-preamble-text"><a href="#Automatically-excerpt-description-in-homepage-as-preamble-text" class="headerlink" title="Automatically excerpt description in homepage as preamble text."></a>Automatically excerpt description in homepage as preamble text.</h1><p>excerpt_description: true</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>个人博客</category>

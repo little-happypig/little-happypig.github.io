@@ -248,8 +248,7 @@
 <a id="more"></a>
 <p>现在的使用方法是：在next主题的_config.xml中搜索fontawesome，并更改属性<code>fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css</code>，注意里面的文档是all.min.css，而不是font-awesom.min.css。<br>但是这样更改之后还是会出现方框乱码，原因是next默认使用的fa的类，而有时候我们需要使用fab或其他的类。所以需要修改一下源代码。<br>找到layout/_macro/menu/menu-item.swig，定位class=”menu-item-icon，将后面的“fa fa-fw fa-”删去。以后再修改icon不能只加一个名字了。可以像我这样修改：<code>assorted: /assorted || fa fa-fw fa-layer-group</code>。<br>可以看到我将icon的名称补全了。如果想用fab的类，可以像这样修改：<code>python: /python || fab fa-fw fa-python</code>。以此类推。</p>
 <p>这样修改以后，如果不想用fontawesome了，想用其他的icon库，改起来也很方便。</p>
-<p>layout/_macro/menu/menu-item.swig被layout/_partials/header/sub-menu.swig引用。</p>
-<p>另外由于fontawesome版本改动，社交软件的icon也需要更改，在_config.xml中搜索github，将icon改为<code>fab fa-fw fa-github</code>。找到ayout/_macro/siderbar.swig，搜索fa fa-fw fa-，看看定位的地点上面是不是<code>{百分号 if theme.social_icons.enable 百分号}</code>。是的话将fa fa-fw fa-删除。</p>
+<p>layout/_macro/menu/menu-item.swig被layout/_partials/header/sub-menu.swig引用。<br>另外由于fontawesome版本改动，社交软件的icon也需要更改，在_config.xml中搜索github，将icon改为<code>fab fa-fw fa-github</code>。找到ayout/_macro/siderbar.swig，搜索fa fa-fw fa-，看看定位的地点上面是不是<code>{百分号 if theme.social_icons.enable 百分号}</code>。是的话将fa fa-fw fa-删除。</p>
 
     </div>
 
