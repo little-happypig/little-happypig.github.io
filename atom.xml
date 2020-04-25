@@ -49,10 +49,14 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -121,10 +125,7 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;思维导图测试&quot;&gt;&lt;a href=&quot;#思维导图测试&quot; class=&quot;headerlink&quot; title=&quot;思维导图测试&quot;&gt;&lt;/a&gt;思维导图测试&lt;/h1&gt;
-      
+      &lt;h1 id=&quot;思维导图测试&quot;&gt;&lt;a href=&quot;#思维导图测试&quot; class=&quot;headerlink&quot; title=&quot;思维导图测试&quot;&gt;&lt;/a&gt;思维导图测试&lt;/h1&gt;
     
     </summary>
     
@@ -172,10 +173,14 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Markdownlint的设置知识&quot;&gt;&lt;a href=&quot;#Markdownlint的设置知识&quot; class=&quot;headerlink&quot; title=&quot;Markdownlint的设置知识&quot;&gt;&lt;/a&gt;Markdownlint的设置知识&lt;/h1&gt;&lt;p&gt;VS Code的插件
-      
+      &lt;h1 id=&quot;Markdownlint的设置知识&quot;&gt;&lt;a href=&quot;#Markdownlint的设置知识&quot; class=&quot;headerlink&quot; title=&quot;Markdownlint的设置知识&quot;&gt;&lt;/a&gt;Markdownlint的设置知识&lt;/h1&gt;&lt;p&gt;VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;editor.suggestSelection&amp;quot;: &amp;quot;first&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;vsintellicode.modify.editor.suggestSelection&amp;quot;: &amp;quot;automaticallyOverrodeDefaultValue&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;git.autofetch&amp;quot;: true,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;markdownlint.config&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;quot;MD025&amp;quot;: false,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;quot;MD040&amp;quot;: false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;git.enableSmartCommit&amp;quot;: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;多个项目用逗号分隔开。&lt;/p&gt;
+
     
     </summary>
     
@@ -198,10 +203,14 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;解决使用VS-Code上传Github每次都需要输入密码和用户名的问题&quot;&gt;&lt;a href=&quot;#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题&quot; class=&quot;headerlink&quot; title=&quot;解决使用VS Code上传Github每次都
-      
+      &lt;h1 id=&quot;解决使用VS-Code上传Github每次都需要输入密码和用户名的问题&quot;&gt;&lt;a href=&quot;#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题&quot; class=&quot;headerlink&quot; title=&quot;解决使用VS Code上传Github每次都需要输入密码和用户名的问题&quot;&gt;&lt;/a&gt;解决使用VS Code上传Github每次都需要输入密码和用户名的问题&lt;/h1&gt;&lt;p&gt;使用下面的命令可以解决&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;git config –global credential.helper store&lt;/p&gt;
+&lt;p&gt;命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再重启vscode，进行git操作，vscode就不再让我们输入用户名和密码啦！&lt;/p&gt;
+
     
     </summary>
     
@@ -252,10 +261,15 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;VS-Code中配置Github&quot;&gt;&lt;a href=&quot;#VS-Code中配置Github&quot; class=&quot;headerlink&quot; title=&quot;VS Code中配置Github&quot;&gt;&lt;/a&gt;VS Code中配置Github&lt;/h1&gt;&lt;h2 id=&quot;1-配置Git&quot;&gt;
-      
+      &lt;h1 id=&quot;VS-Code中配置Github&quot;&gt;&lt;a href=&quot;#VS-Code中配置Github&quot; class=&quot;headerlink&quot; title=&quot;VS Code中配置Github&quot;&gt;&lt;/a&gt;VS Code中配置Github&lt;/h1&gt;&lt;h2 id=&quot;1-配置Git&quot;&gt;&lt;a href=&quot;#1-配置Git&quot; class=&quot;headerlink&quot; title=&quot;1. 配置Git&quot;&gt;&lt;/a&gt;1. 配置Git&lt;/h2&gt;&lt;p&gt;安装最新版git后，命令行输入&lt;/p&gt;
+&lt;figure class=&quot;highlight dos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name 你的用户名  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* git config --global user.email 你的邮箱&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;2-Github设置&quot;&gt;&lt;a href=&quot;#2-Github设置&quot; class=&quot;headerlink&quot; title=&quot;2. Github设置&quot;&gt;&lt;/a&gt;2. Github设置&lt;/h2&gt;&lt;p&gt;在GitHub中新建一个空仓库（新项目）&lt;/p&gt;
+&lt;p&gt;确认后显示ssh地址  &lt;/p&gt;
+&lt;p&gt;首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码&lt;/p&gt;
+&lt;figure class=&quot;highlight dos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &quot;# vscode-demo&quot; &amp;gt;&amp;gt; README.&lt;span class=&quot;built_in&quot;&gt;md&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add README.&lt;span class=&quot;built_in&quot;&gt;md&lt;/span&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &quot;first commit&quot;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add origin git@github.com:plusczh/vscode-demo.git  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push -u origin master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果在输出最后一行报错 fatal:Could not read from remote repository&lt;br&gt;则需要设置SSH key&lt;br&gt;右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key&lt;br&gt;title随便取，密码设置如下  &lt;/p&gt;
     
     </summary>
     
@@ -282,10 +296,29 @@
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;关于使用opencore安装我的AMD黑果的笔记（一）&quot;&gt;&lt;a href=&quot;#关于使用opencore安装我的AMD黑果的笔记（一）&quot; class=&quot;headerlink&quot; title=&quot;关于使用opencore安装我的AMD黑果的笔记（一）&quot;&gt;&lt;/a&gt;关于使用o
-      
+      &lt;h1 id=&quot;关于使用opencore安装我的AMD黑果的笔记（一）&quot;&gt;&lt;a href=&quot;#关于使用opencore安装我的AMD黑果的笔记（一）&quot; class=&quot;headerlink&quot; title=&quot;关于使用opencore安装我的AMD黑果的笔记（一）&quot;&gt;&lt;/a&gt;关于使用opencore安装我的AMD黑果的笔记（一）&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;参考文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.xjn819.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;xjn’s 的博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.daliansky.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;黑果小兵的博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=QtvDRDqgolc&amp;t=275s&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;youtube的视频&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;相关下载文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://mega.nz/#!8ox3SYAJ!RYPlgtSDiT6pBWlrLw6vCle_zh_9DAwIj9yrxKUWZGY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;安装工具链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.python.org/downloads/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;待解决的问题&quot;&gt;&lt;a href=&quot;#待解决的问题&quot; class=&quot;headerlink&quot; title=&quot;待解决的问题&quot;&gt;&lt;/a&gt;待解决的问题&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;R9 290X显卡双屏的问题&lt;/li&gt;
+&lt;li&gt;启动图形化菜单&lt;/li&gt;
+&lt;li&gt;休眠&lt;/li&gt;
+&lt;li&gt;Indesign的启动问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;0-0-BIOS设置&quot;&gt;&lt;a href=&quot;#0-0-BIOS设置&quot; class=&quot;headerlink&quot; title=&quot;0.0 BIOS设置&quot;&gt;&lt;/a&gt;0.0 BIOS设置&lt;/h2&gt;&lt;p&gt;直接抄袭@黑果小兵了~嘻嘻嘻&lt;/p&gt;
+&lt;p&gt;禁用如下：&lt;/p&gt;
     
     </summary>
     
