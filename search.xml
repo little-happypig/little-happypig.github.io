@@ -94,6 +94,178 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdownlint规则详细介绍及自定义参数设置</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
+<p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
+<a id="more"></a>
+<ul>
+<li>MD001 - Heading levels should only increment by one level at a time<br>标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</li>
+</ul>
+<p>MD002 - First heading should be a top level heading<br>文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</p>
+<p>参数：<br>“level”：指定最高级标题的级数，默认是1</p>
+<ul>
+<li>MD003 - Heading style<br>整篇文档要采用一致的标题格式</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是”consistent”，也就是整篇文档一致</p>
+<p>标题格式必须统一，一般不能混用，但”setext_with_atx”, “setext_with_atx_closed”格式可以在”setext”格式二级标题后接着使用”atx”或”atx_closed”格式的标题</p>
+<ul>
+<li>MD004 - Unordered list style<br>整篇文档定义无序列表的格式要一致</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是”consistent”</p>
+<ul>
+<li><p>MD005 - Inconsistent indentation for list items at the same level<br>同一级的列表缩进必须一致<br>在有序列表中，前面的数字序号可以左对齐，也可以右对齐</p>
+</li>
+<li><p>MD006 - Consider starting bulleted lists at the beginning of the line<br>1级列表不能缩进</p>
+</li>
+<li><p>MD007 - Unordered list indentation<br>无序列表嵌套缩进时默认采用两个空格</p>
+</li>
+</ul>
+<p>参数：<br>“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
+<ul>
+<li>MD009 - Trailing spaces<br>行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</li>
+</ul>
+<p>参数：<br>“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>“list_item_empty_lines”：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
+<ul>
+<li>MD010 - Hard tabs<br>不能使用tab键缩进，要使用空格</li>
+</ul>
+<p>参数：<br>“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
+<ul>
+<li><p>MD011 - Reversed link syntax<br>检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</p>
+</li>
+<li><p>MD012 - Multiple consecutive blank lines<br>文档中不能有连续的空行，在代码块中此规则不会生效</p>
+</li>
+</ul>
+<p>参数：<br>“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
+<ul>
+<li>MD013 - Line length<br>默认行的最大长度是80，此规则对代码块、表格、标题也生效</li>
+</ul>
+<p>参数：<br>“line_length”：指定行的最大长度，默认是80<br>“heading_line_length”：指定标题行的最大长度，默认是80<br>“code_blocks”：指定规则是否(true or false)对代码块生效，默认true<br>“tables”：指定规则是否(true or false)对表格生效，默认true<br>“hesdings”：指定规则是否(true or false)对标题生效，默认true</p>
+<ul>
+<li>MD014 - Dollar signs used before commands without showing output<br>在代码块中，终端命令前不需要有美元符号($)<br>如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号($)，如：</li>
+</ul>
+<p>$ ls<br>foo bar<br>$ cat foo<br>hello world</p>
+<ul>
+<li><p>MD018 - No space after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间需用一个空格隔开</p>
+</li>
+<li><p>MD019 - Multiple spaces after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li><p>MD020 - No space inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间需用一个空格隔开</p>
+</li>
+<li><p>MD021 - Multiple spaces inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li><p>MD022 - Headings should be surrounded by blank lines<br>标题行的上下行必须都是空行</p>
+</li>
+</ul>
+<p>参数：<br>“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>“lines_below”：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
+<p>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</p>
+<ul>
+<li><p>MD023 - Headings must start at the beginning of the line<br>标题行不能缩进</p>
+</li>
+<li><p>MD024 - Multiple headings with the same content<br>文档不能有内容重复的标题</p>
+</li>
+</ul>
+<p>参数：<br>“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
+<ul>
+<li>MD025 - Multiple top level headings in the same document<br>同一文档只能有一个最高级的标题，默认是只能有一个1级标题</li>
+</ul>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+<ul>
+<li>MD026 - Trailing punctuation in heading<br>标题行末尾不能有以下标点符号：”.,;:!?”</li>
+</ul>
+<p>参数：<br>“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是”.,;:!?”</p>
+<p>此规则默认的是英文的标点符号，中文标点符号不在规则之内</p>
+<ul>
+<li><p>MD027 - Multiple spaces after blockquote symbol<br>创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</p>
+</li>
+<li><p>MD028 - Blank line inside blockquote<br>两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</p>
+</li>
+<li><p>MD029 - Ordered list item prefix<br>有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</p>
+</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定前缀序号的格式，(“one”,”ordered”,”one_or_ordered”,”zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是”one_or_ordered”</p>
+<p>本条规则支持在前缀序号中补0，以实现对齐，如：</p>
+<p>…<br>08.  one<br>09.  two<br>10.  three<br>…</p>
+<ul>
+<li>MD030 - Spaces after list markers<br>列表（有序、无序）的前缀符号和文字之间用1个空格隔开<br>在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</li>
+</ul>
+<p>参数：<br>“ul_single”,”ol_single”,”ul_multi”,”ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
+<ul>
+<li><p>MD031 - Fenced code blocks should be surrounded by blank lines<br>单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</p>
+</li>
+<li><p>MD032 - Lists should be surrounded by blank lines<br>列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>列表的缩进必须一致，否则会警告</p>
+</li>
+<li><p>MD033 - Inline HTML<br>文档中不允许使用HTML语句</p>
+</li>
+</ul>
+<p>参数：<br>“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
+<ul>
+<li><p>MD034 - Bare URL used<br>单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</p>
+</li>
+<li><p>MD035 - Horizontal rule style<br>创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</p>
+</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定创建水平线的方式，值有：(“consistent”,”***”,”—“,”___”)，默认是”consistent”</p>
+<ul>
+<li>MD036 - Emphasis used instead of a heading<br>不能用强调代替标题</li>
+</ul>
+<p>参数：<br>“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是”.,;:!?”</p>
+<p>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</p>
+<ul>
+<li><p>MD037 - Spaces inside emphasis markers<br>用于创建强调的符号和强调的的文字之间不能有空格</p>
+</li>
+<li><p>MD038 - Spaces inside code span elements<br>当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格<br>如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</p>
+</li>
+<li><p>MD039 - Spaces inside link text<br>链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</p>
+</li>
+</ul>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="百 度">百 度</a></p>
+<ul>
+<li><p>MD040 - Fenced code blocks should have a language specified<br>单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</p>
+</li>
+<li><p>MD041 - First line in file should be a top level heading<br>文档的第一个非空行应该是文档最高级的标题，默认是1级标题</p>
+</li>
+</ul>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+<ul>
+<li><p>MD042 - No empty links<br>链接的地址不能为空</p>
+</li>
+<li><p>MD043 - Required heading structure<br>要求标题遵循一定的结构，默认是没有规定的结构(“null”)</p>
+</li>
+</ul>
+<p>参数：<br>“headings”：字符串数组，指定标题需要遵循的结构，默认是”null”，可以自行指定结构，如；</p>
+<p>[<br>    “# head”,<br>    “## item”,<br>    “### detail”,<br>    “*”<br>]<br>星号(*)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</p>
+<ul>
+<li>MD044 - Proper names should have the correct capitalization<br>指定一些名称，会检查它是否有正确的大写</li>
+</ul>
+<p>参数：<br>“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数”names”中，防止写错</p>
+<ul>
+<li><p>MD045 - Images should have alternate text (alt text)<br>图片链接必须包含描述文本（alt text）</p>
+</li>
+<li><p>MD046 - Code block style<br>整篇文档采用一致的代码格式</p>
+</li>
+</ul>
+<p>参数：<br>“style”: 字符串，指定代码块定义格式，有（”consistent”,”fenced”,”indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
+<ul>
+<li><p>MD047 - Files should end with a single newline character<br>文档需用一个空行结尾</p>
+</li>
+<li><p>MD048 - Code fence style<br>Tags: code</p>
+</li>
+</ul>
+<p>Aliases: code-fence-style</p>
+<p>Parameters: style (“consistent”, “tilde”, “backtick”; default “consistent”)</p>
+<p>This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style:</p>
+<p>The configured list style can be a specific symbol to use (backtick, tilde), or can require that usage be consistent within the document.</p>
+<p>Rationale: Consistent formatting makes it easier to understand a document.</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Markdownlint</tag>
+        <tag>参数</tag>
+        <tag>设置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
@@ -411,9 +583,9 @@
 </tbody></table>
 ]]></content>
       <tags>
+        <tag>设置</tag>
         <tag>Jekyll</tag>
         <tag>Permalinks</tag>
-        <tag>设置</tag>
       </tags>
   </entry>
   <entry>
@@ -430,178 +602,6 @@
       <tags>
         <tag>VS Code</tag>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdownlint规则详细介绍及自定义参数设置</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
-<p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
-<a id="more"></a>
-<ul>
-<li>MD001 - Heading levels should only increment by one level at a time<br>标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</li>
-</ul>
-<p>MD002 - First heading should be a top level heading<br>文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</p>
-<p>参数：<br>“level”：指定最高级标题的级数，默认是1</p>
-<ul>
-<li>MD003 - Heading style<br>整篇文档要采用一致的标题格式</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是”consistent”，也就是整篇文档一致</p>
-<p>标题格式必须统一，一般不能混用，但”setext_with_atx”, “setext_with_atx_closed”格式可以在”setext”格式二级标题后接着使用”atx”或”atx_closed”格式的标题</p>
-<ul>
-<li>MD004 - Unordered list style<br>整篇文档定义无序列表的格式要一致</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是”consistent”</p>
-<ul>
-<li><p>MD005 - Inconsistent indentation for list items at the same level<br>同一级的列表缩进必须一致<br>在有序列表中，前面的数字序号可以左对齐，也可以右对齐</p>
-</li>
-<li><p>MD006 - Consider starting bulleted lists at the beginning of the line<br>1级列表不能缩进</p>
-</li>
-<li><p>MD007 - Unordered list indentation<br>无序列表嵌套缩进时默认采用两个空格</p>
-</li>
-</ul>
-<p>参数：<br>“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
-<ul>
-<li>MD009 - Trailing spaces<br>行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</li>
-</ul>
-<p>参数：<br>“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>“list_item_empty_lines”：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
-<ul>
-<li>MD010 - Hard tabs<br>不能使用tab键缩进，要使用空格</li>
-</ul>
-<p>参数：<br>“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
-<ul>
-<li><p>MD011 - Reversed link syntax<br>检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</p>
-</li>
-<li><p>MD012 - Multiple consecutive blank lines<br>文档中不能有连续的空行，在代码块中此规则不会生效</p>
-</li>
-</ul>
-<p>参数：<br>“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
-<ul>
-<li>MD013 - Line length<br>默认行的最大长度是80，此规则对代码块、表格、标题也生效</li>
-</ul>
-<p>参数：<br>“line_length”：指定行的最大长度，默认是80<br>“heading_line_length”：指定标题行的最大长度，默认是80<br>“code_blocks”：指定规则是否(true or false)对代码块生效，默认true<br>“tables”：指定规则是否(true or false)对表格生效，默认true<br>“hesdings”：指定规则是否(true or false)对标题生效，默认true</p>
-<ul>
-<li>MD014 - Dollar signs used before commands without showing output<br>在代码块中，终端命令前不需要有美元符号($)<br>如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号($)，如：</li>
-</ul>
-<p>$ ls<br>foo bar<br>$ cat foo<br>hello world</p>
-<ul>
-<li><p>MD018 - No space after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间需用一个空格隔开</p>
-</li>
-<li><p>MD019 - Multiple spaces after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</p>
-</li>
-<li><p>MD020 - No space inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间需用一个空格隔开</p>
-</li>
-<li><p>MD021 - Multiple spaces inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</p>
-</li>
-<li><p>MD022 - Headings should be surrounded by blank lines<br>标题行的上下行必须都是空行</p>
-</li>
-</ul>
-<p>参数：<br>“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>“lines_below”：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
-<p>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</p>
-<ul>
-<li><p>MD023 - Headings must start at the beginning of the line<br>标题行不能缩进</p>
-</li>
-<li><p>MD024 - Multiple headings with the same content<br>文档不能有内容重复的标题</p>
-</li>
-</ul>
-<p>参数：<br>“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
-<ul>
-<li>MD025 - Multiple top level headings in the same document<br>同一文档只能有一个最高级的标题，默认是只能有一个1级标题</li>
-</ul>
-<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
-<ul>
-<li>MD026 - Trailing punctuation in heading<br>标题行末尾不能有以下标点符号：”.,;:!?”</li>
-</ul>
-<p>参数：<br>“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是”.,;:!?”</p>
-<p>此规则默认的是英文的标点符号，中文标点符号不在规则之内</p>
-<ul>
-<li><p>MD027 - Multiple spaces after blockquote symbol<br>创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</p>
-</li>
-<li><p>MD028 - Blank line inside blockquote<br>两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</p>
-</li>
-<li><p>MD029 - Ordered list item prefix<br>有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</p>
-</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定前缀序号的格式，(“one”,”ordered”,”one_or_ordered”,”zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是”one_or_ordered”</p>
-<p>本条规则支持在前缀序号中补0，以实现对齐，如：</p>
-<p>…<br>08.  one<br>09.  two<br>10.  three<br>…</p>
-<ul>
-<li>MD030 - Spaces after list markers<br>列表（有序、无序）的前缀符号和文字之间用1个空格隔开<br>在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</li>
-</ul>
-<p>参数：<br>“ul_single”,”ol_single”,”ul_multi”,”ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
-<ul>
-<li><p>MD031 - Fenced code blocks should be surrounded by blank lines<br>单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</p>
-</li>
-<li><p>MD032 - Lists should be surrounded by blank lines<br>列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>列表的缩进必须一致，否则会警告</p>
-</li>
-<li><p>MD033 - Inline HTML<br>文档中不允许使用HTML语句</p>
-</li>
-</ul>
-<p>参数：<br>“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
-<ul>
-<li><p>MD034 - Bare URL used<br>单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</p>
-</li>
-<li><p>MD035 - Horizontal rule style<br>创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</p>
-</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定创建水平线的方式，值有：(“consistent”,”***”,”—“,”___”)，默认是”consistent”</p>
-<ul>
-<li>MD036 - Emphasis used instead of a heading<br>不能用强调代替标题</li>
-</ul>
-<p>参数：<br>“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是”.,;:!?”</p>
-<p>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</p>
-<ul>
-<li><p>MD037 - Spaces inside emphasis markers<br>用于创建强调的符号和强调的的文字之间不能有空格</p>
-</li>
-<li><p>MD038 - Spaces inside code span elements<br>当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格<br>如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</p>
-</li>
-<li><p>MD039 - Spaces inside link text<br>链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</p>
-</li>
-</ul>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="百 度">百 度</a></p>
-<ul>
-<li><p>MD040 - Fenced code blocks should have a language specified<br>单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</p>
-</li>
-<li><p>MD041 - First line in file should be a top level heading<br>文档的第一个非空行应该是文档最高级的标题，默认是1级标题</p>
-</li>
-</ul>
-<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
-<ul>
-<li><p>MD042 - No empty links<br>链接的地址不能为空</p>
-</li>
-<li><p>MD043 - Required heading structure<br>要求标题遵循一定的结构，默认是没有规定的结构(“null”)</p>
-</li>
-</ul>
-<p>参数：<br>“headings”：字符串数组，指定标题需要遵循的结构，默认是”null”，可以自行指定结构，如；</p>
-<p>[<br>    “# head”,<br>    “## item”,<br>    “### detail”,<br>    “*”<br>]<br>星号(*)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</p>
-<ul>
-<li>MD044 - Proper names should have the correct capitalization<br>指定一些名称，会检查它是否有正确的大写</li>
-</ul>
-<p>参数：<br>“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数”names”中，防止写错</p>
-<ul>
-<li><p>MD045 - Images should have alternate text (alt text)<br>图片链接必须包含描述文本（alt text）</p>
-</li>
-<li><p>MD046 - Code block style<br>整篇文档采用一致的代码格式</p>
-</li>
-</ul>
-<p>参数：<br>“style”: 字符串，指定代码块定义格式，有（”consistent”,”fenced”,”indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
-<ul>
-<li><p>MD047 - Files should end with a single newline character<br>文档需用一个空行结尾</p>
-</li>
-<li><p>MD048 - Code fence style<br>Tags: code</p>
-</li>
-</ul>
-<p>Aliases: code-fence-style</p>
-<p>Parameters: style (“consistent”, “tilde”, “backtick”; default “consistent”)</p>
-<p>This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style:</p>
-<p>The configured list style can be a specific symbol to use (backtick, tilde), or can require that usage be consistent within the document.</p>
-<p>Rationale: Consistent formatting makes it easier to understand a document.</p>
-]]></content>
-      <tags>
-        <tag>设置</tag>
-        <tag>Markdown</tag>
-        <tag>Markdownlint</tag>
-        <tag>参数</tag>
       </tags>
   </entry>
   <entry>
@@ -627,6 +627,31 @@
       <tags>
         <tag>VS Code</tag>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code中配置Github</title>
+    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
+    <content><![CDATA[<h1 id="VS-Code中配置Github"><a href="#VS-Code中配置Github" class="headerlink" title="VS Code中配置Github"></a>VS Code中配置Github</h1><h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
+<p>确认后显示ssh地址  </p>
+<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
+<p>执行这个命令（在git bash中）</p>
+<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
+<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
+<p>步骤：</p>
+<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>参数</tag>
+        <tag>设置</tag>
+        <tag>Rules</tag>
       </tags>
   </entry>
   <entry>
@@ -684,77 +709,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>2020-04-25-Hexo中设置“阅读全文“</title>
-    <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
-    <content><![CDATA[<h1 id="Hexo-设置阅读全文"><a href="#Hexo-设置阅读全文" class="headerlink" title="Hexo-设置阅读全文"></a><a href="https://www.cnblogs.com/php-linux/p/8417887.html" target="_blank" rel="noopener">Hexo-设置阅读全文</a></h1><p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://link.jianshu.com/?t=https%3A%2F%2Fviolinlin.github.io%2F" target="_blank" rel="noopener">我的小窝</a></p>
-<ol>
-<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
-</ol>
+    <title>2020-04-25-更改hexo next主题的fontawesome版本至最新</title>
+    <url>/2020/04/25/2020-04-25-%E6%9B%B4%E6%94%B9hexo%20next%E4%B8%BB%E9%A2%98%E7%9A%84fontawesome%E7%89%88%E6%9C%AC%E8%87%B3%E6%9C%80%E6%96%B0/</url>
+    <content><![CDATA[<p>由于在后续又发现在其他地方也用到了icon，所以需要大量更改配置。<strong>如果不会写进程的还是别改了。</strong></p>
+<p>next的fontawesome默认版本是4.6.2，在写本文时，fontawesome的最新版本是5.8.1。貌似fontawesome在5.0.0版本之后改版了。总之一直出现方框乱码。<br>后来发现，现在的fontawesome链接已经跟以前不一样了，它现在分为3大类别。</p>
 <a id="more"></a>
-
-
-<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
-<ol start="2">
-<li>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</li>
-</ol>
-<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
-<ol start="3">
-<li>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-
-<p><strong>建议使用 &lt; !– more –&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</strong></p>
-<p>特别注意的是在Next的高版本上<br>next7.6版本关于设置阅读全文</p>
-<p>LIYUANWAISPRING 2019-12-05 17:00:03  614  收藏<br>展开<br>网上查了好多资料始终都没得到解决如何去设置“阅读全文”。最后查了最细的next7.6文档才发现还要下载插件 然后在主题配置文件_config.yml配置下就好了。<br>一，在博客目录下执行</p>
-<p>npm install hexo-excerpt –save</p>
-<p>二，在站点配置文件_config.yml添加</p>
-<p>excerpt:<br>depth: 10<br>excerpt_excludes: []<br>more_excludes: []<br>hideWholePostExcerpts: true</p>
-<p>next7.6最新文档添加链接描述</p>
-<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
-<h1 id="Automatically-excerpt-description-in-homepage-as-preamble-text"><a href="#Automatically-excerpt-description-in-homepage-as-preamble-text" class="headerlink" title="Automatically excerpt description in homepage as preamble text."></a>Automatically excerpt description in homepage as preamble text.</h1><p>excerpt_description: true</p>
+<p>现在的使用方法是：在next主题的_config.xml中搜索fontawesome，并更改属性<code>fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css</code>，注意里面的文档是all.min.css，而不是font-awesom.min.css。<br>但是这样更改之后还是会出现方框乱码，原因是next默认使用的fa的类，而有时候我们需要使用fab或其他的类。所以需要修改一下源代码。<br>找到layout/_macro/menu/menu-item.swig，定位class=”menu-item-icon，将后面的“fa fa-fw fa-”删去。以后再修改icon不能只加一个名字了。可以像我这样修改：<code>assorted: /assorted || fa fa-fw fa-layer-group</code>。<br>可以看到我将icon的名称补全了。如果想用fab的类，可以像这样修改：<code>python: /python || fab fa-fw fa-python</code>。以此类推。</p>
+<p>这样修改以后，如果不想用fontawesome了，想用其他的icon库，改起来也很方便。</p>
+<p>layout/_macro/menu/menu-item.swig被layout/_partials/header/sub-menu.swig引用。</p>
+<p>另外由于fontawesome版本改动，社交软件的icon也需要更改，在_config.xml中搜索github，将icon改为<code>fab fa-fw fa-github</code>。找到ayout/_macro/siderbar.swig，搜索fa fa-fw fa-，看看定位的地点上面是不是<code>{百分号 if theme.social_icons.enable 百分号}</code>。是的话将fa fa-fw fa-删除。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>VS Code中配置Github</title>
-    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
-    <content><![CDATA[<h1 id="VS-Code中配置Github"><a href="#VS-Code中配置Github" class="headerlink" title="VS Code中配置Github"></a>VS Code中配置Github</h1><h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
-<p>确认后显示ssh地址  </p>
-<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
-<p>执行这个命令（在git bash中）</p>
-<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
-<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
-<p>步骤：</p>
-<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
-]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
       <tags>
-        <tag>设置</tag>
-        <tag>Markdown</tag>
-        <tag>参数</tag>
-        <tag>Rules</tag>
+        <tag>Hexo</tag>
+        <tag>next主题</tag>
+        <tag>fontawesome</tag>
       </tags>
   </entry>
   <entry>
@@ -996,5 +967,62 @@
         <tag>个人博客</tag>
         <tag>搭建</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>2020-04-25-Hexo-设置阅读全文</title>
+    <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
+    <content><![CDATA[<p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
+<ol>
+<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
+</ol>
+<a id="more"></a>
+
+
+<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
+<ol start="2">
+<li>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</li>
+</ol>
+<p>   <img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
+<ol start="3">
+<li>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+
+<p><strong>建议使用 &lt; !– more –&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</strong></p>
+<p>特别注意的是在Next的高版本上<br>next7.6版本关于设置阅读全文</p>
+<p>LIYUANWAISPRING 2019-12-05 17:00:03  614  收藏<br>展开<br>网上查了好多资料始终都没得到解决如何去设置“阅读全文”。最后查了最细的next7.6文档才发现还要下载插件 然后在主题配置文件_config.yml配置下就好了。<br>一，在博客目录下执行</p>
+<p>npm install hexo-excerpt –save</p>
+<p>二，在站点配置文件_config.yml添加</p>
+<p>excerpt:<br>depth: 10<br>excerpt_excludes: []<br>more_excludes: []<br>hideWholePostExcerpts: true</p>
+<p>next7.6最新文档添加链接描述</p>
+<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
+<h1 id="Automatically-excerpt-description-in-homepage-as-preamble-text"><a href="#Automatically-excerpt-description-in-homepage-as-preamble-text" class="headerlink" title="Automatically excerpt description in homepage as preamble text."></a>Automatically excerpt description in homepage as preamble text.</h1><p>excerpt_description: true</p>
+]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>设置</tag>
+        <tag>Hexo</tag>
+        <tag>阅读全文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
 </search>
