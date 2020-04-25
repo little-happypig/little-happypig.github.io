@@ -94,31 +94,6 @@
       </tags>
   </entry>
   <entry>
-    <title>思维导图测试</title>
-    <url>/2020/04/21/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1>]]></content>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdownlint的设置知识</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
-<ul>
-<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>多个项目用逗号分隔开。</p>
-]]></content>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
@@ -442,6 +417,22 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdownlint的设置知识</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
+<ul>
+<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多个项目用逗号分隔开。</p>
+]]></content>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdownlint规则详细介绍及自定义参数设置</title>
     <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
@@ -614,6 +605,56 @@
       </tags>
   </entry>
   <entry>
+    <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
+    <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
+<ul>
+<li><p>git config –global credential.helper store</p>
+<p>命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。</p>
+</li>
+</ul>
+<p>再重启vscode，进行git操作，vscode就不再让我们输入用户名和密码啦！</p>
+]]></content>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code中配置Github</title>
+    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
+    <content><![CDATA[<h1 id="VS-Code中配置Github"><a href="#VS-Code中配置Github" class="headerlink" title="VS Code中配置Github"></a>VS Code中配置Github</h1><h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
+<p>确认后显示ssh地址  </p>
+<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
+<p>执行这个命令（在git bash中）</p>
+<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
+<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
+<p>步骤：</p>
+<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
+]]></content>
+      <tags>
+        <tag>设置</tag>
+        <tag>Markdown</tag>
+        <tag>参数</tag>
+        <tag>Rules</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>思维导图测试</title>
+    <url>/2020/04/21/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1>]]></content>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二级建造师-建设工程施工管理笔记</title>
     <url>/2020/04/24/2020-04-24-%E4%BA%8C%E7%BA%A7%E5%BB%BA%E9%80%A0%E5%B8%88-%E5%BB%BA%E8%AE%BE%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="建设工程施工管理"><a href="#建设工程施工管理" class="headerlink" title="建设工程施工管理"></a>建设工程施工管理</h1><hr>
@@ -665,47 +706,6 @@
         <tag>建设工程施工管理</tag>
         <tag>笔记</tag>
         <tag>二级建造师</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
-    <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
-<ul>
-<li><p>git config –global credential.helper store</p>
-<p>命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。</p>
-</li>
-</ul>
-<p>再重启vscode，进行git操作，vscode就不再让我们输入用户名和密码啦！</p>
-]]></content>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code中配置Github</title>
-    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
-    <content><![CDATA[<h1 id="VS-Code中配置Github"><a href="#VS-Code中配置Github" class="headerlink" title="VS Code中配置Github"></a>VS Code中配置Github</h1><h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
-<p>确认后显示ssh地址  </p>
-<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
-<p>执行这个命令（在git bash中）</p>
-<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
-<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
-<p>步骤：</p>
-<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
-]]></content>
-      <tags>
-        <tag>设置</tag>
-        <tag>Markdown</tag>
-        <tag>参数</tag>
-        <tag>Rules</tag>
       </tags>
   </entry>
   <entry>
