@@ -17,22 +17,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"little-happypig.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"little-happypig.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="永久链接(Permalinks)Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 Configuration 或 YAML 头信息 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。默认配置为 date。 永久链接的模板用以冒号为前缀的关键词标记动态内容，比如 date 代表 &#x2F;:categories&#x2F;:year&#x2F;:month&#x2F;:day&#x2F;:title.html">
+  <meta name="description" content="永久链接(Permalinks)Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 Configuration 或 YAML 头信息 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jekyll中关于永久链接(Permalinks)的设置规则">
 <meta property="og:url" content="https://little-happypig.github.io/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="永久链接(Permalinks)Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 Configuration 或 YAML 头信息 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。默认配置为 date。 永久链接的模板用以冒号为前缀的关键词标记动态内容，比如 date 代表 &#x2F;:categories&#x2F;:year&#x2F;:month&#x2F;:day&#x2F;:title.html">
+<meta property="og:site_name" content="安肆的小窝">
+<meta property="og:description" content="永久链接(Permalinks)Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 Configuration 或 YAML 头信息 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-21T02:13:00.000Z">
-<meta property="article:modified_time" content="2020-04-21T11:10:10.683Z">
+<meta property="article:modified_time" content="2020-04-25T07:40:01.238Z">
 <meta property="article:author" content="安肆">
-<meta property="article:tag" content="设置">
 <meta property="article:tag" content="Jekyll">
 <meta property="article:tag" content="Permalinks">
+<meta property="article:tag" content="设置">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://little-happypig.github.io/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>Jekyll中关于永久链接(Permalinks)的设置规则 | Hexo</title>
+  <title>Jekyll中关于永久链接(Permalinks)的设置规则 | 安肆的小窝</title>
   
 
 
@@ -79,6 +79,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="安肆的小窝" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -99,13 +100,14 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">安肆的小窝</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -140,11 +142,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -177,7 +206,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="安肆的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -190,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-21 10:13:00 / 修改时间：19:10:10" itemprop="dateCreated datePublished" datetime="2020-04-21T10:13:00+08:00">2020-04-21</time>
+              <time title="创建时间：2020-04-21 10:13:00" itemprop="dateCreated datePublished" datetime="2020-04-21T10:13:00+08:00">2020-04-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-25 15:40:01" itemprop="dateModified" datetime="2020-04-25T15:40:01+08:00">2020-04-25</time>
+              </span>
 
           
 
@@ -206,7 +241,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。默认配置为 <code>date</code>。</p>
+        <h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
+<a id="more"></a>
+
+<p>默认配置为 <code>date</code>。</p>
 <p>永久链接的模板用以冒号为前缀的关键词标记动态内容，比如 <code>date</code> 代表 <code>/:categories/:year/:month/:day/:title.html</code>。</p>
 <h2 id="模板变量"><a href="#模板变量" class="headerlink" title="模板变量"></a><a href="#模板变量">模板变量</a></h2><table>
 <thead>
@@ -522,12 +560,31 @@
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag"># 设置</a>
               <a href="/tags/Jekyll/" rel="tag"># Jekyll</a>
               <a href="/tags/Permalinks/" rel="tag"># Permalinks</a>
+              <a href="/tags/%E8%AE%BE%E7%BD%AE/" rel="tag"># 设置</a>
           </div>
 
         
@@ -615,7 +672,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -628,7 +685,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -661,8 +718,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">安肆</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
 
         
 
@@ -698,6 +753,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
