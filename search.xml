@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于使用opencore安装我的AMD黑果的笔记（一）</title>
+    <url>/2020/04/20/2020-04-20-%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8opencore%E5%AE%89%E8%A3%85%E6%88%91%E7%9A%84AMD%E9%BB%91%E6%9E%9C%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li>参考文章</li>
+</ul>
+<ol>
+<li><a href="https://blog.xjn819.com/" target="_blank" rel="noopener">xjn’s 的博客</a></li>
+<li><a href="https://blog.daliansky.net/" target="_blank" rel="noopener">黑果小兵的博客</a></li>
+<li><a href="https://www.youtube.com/watch?v=QtvDRDqgolc&t=275s" target="_blank" rel="noopener">youtube的视频</a></li>
+</ol>
+<ul>
+<li>相关下载文件</li>
+</ul>
+<ol>
+<li><p><a href="https://mega.nz/#!8ox3SYAJ!RYPlgtSDiT6pBWlrLw6vCle_zh_9DAwIj9yrxKUWZGY" target="_blank" rel="noopener">安装工具链接</a></p>
+</li>
+<li><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python下载</a></p>
+<a id="more"></a>
+<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2></li>
+<li><p>R9 290X显卡双屏的问题</p>
+</li>
+<li><p>启动图形化菜单</p>
+</li>
+<li><p>休眠</p>
+</li>
+<li><p>Indesign的启动问题</p>
+</li>
+</ol>
+<h2 id="0-0-BIOS设置"><a href="#0-0-BIOS设置" class="headerlink" title="0.0 BIOS设置"></a>0.0 BIOS设置</h2><p>直接抄袭@黑果小兵了~嘻嘻嘻</p>
+<p>禁用如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Fast Boot</td>
+<td align="left">快速启动</td>
+</tr>
+<tr>
+<td align="left">CFG Lock (MSR 0xE2 write protection)</td>
+<td align="left">CFG 锁 (MSR 0xE2 写入保护)</td>
+</tr>
+<tr>
+<td align="left">VT-d</td>
+<td align="left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-d</a></td>
+</tr>
+<tr>
+<td align="left">CSM</td>
+<td align="left">兼容性支持模块</td>
+</tr>
+</tbody></table>
+<p>启用如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">英文</th>
+<th align="left">中文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">VT-x</td>
+<td align="left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-x</a></td>
+</tr>
+<tr>
+<td align="left">Above 4G decoding</td>
+<td align="left">大于 4G 地址空间解码</td>
+</tr>
+<tr>
+<td align="left">Hyper Threading</td>
+<td align="left">处理器超线程</td>
+</tr>
+<tr>
+<td align="left">Execute Disable Bit</td>
+<td align="left">执行禁止位</td>
+</tr>
+<tr>
+<td align="left">EHCI/XHCI Hand-off</td>
+<td align="left">接手 EHCI/XHCI 控制</td>
+</tr>
+<tr>
+<td align="left">OS type: other types</td>
+<td align="left">操作系统类型: 其他</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>建设工程施工管理</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
 <a id="more"></a>
 
 <p>默认配置为 <code>date</code>。</p>
@@ -326,126 +424,9 @@
       </tags>
   </entry>
   <entry>
-    <title>关于使用opencore安装我的AMD黑果的笔记（一）</title>
-    <url>/2020/04/20/2020-04-20-%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8opencore%E5%AE%89%E8%A3%85%E6%88%91%E7%9A%84AMD%E9%BB%91%E6%9E%9C%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<ul>
-<li>参考文章</li>
-</ul>
-<ol>
-<li><a href="https://blog.xjn819.com/" target="_blank" rel="noopener">xjn’s 的博客</a></li>
-<li><a href="https://blog.daliansky.net/" target="_blank" rel="noopener">黑果小兵的博客</a></li>
-<li><a href="https://www.youtube.com/watch?v=QtvDRDqgolc&t=275s" target="_blank" rel="noopener">youtube的视频</a></li>
-</ol>
-<ul>
-<li>相关下载文件</li>
-</ul>
-<ol>
-<li><p><a href="https://mega.nz/#!8ox3SYAJ!RYPlgtSDiT6pBWlrLw6vCle_zh_9DAwIj9yrxKUWZGY" target="_blank" rel="noopener">安装工具链接</a></p>
-</li>
-<li><p><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python下载</a></p>
-<a id="more"></a>
-<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2></li>
-<li><p>R9 290X显卡双屏的问题</p>
-</li>
-<li><p>启动图形化菜单</p>
-</li>
-<li><p>休眠</p>
-</li>
-<li><p>Indesign的启动问题</p>
-</li>
-</ol>
-<h2 id="0-0-BIOS设置"><a href="#0-0-BIOS设置" class="headerlink" title="0.0 BIOS设置"></a>0.0 BIOS设置</h2><p>直接抄袭@黑果小兵了~嘻嘻嘻</p>
-<p>禁用如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Fast Boot</td>
-<td align="left">快速启动</td>
-</tr>
-<tr>
-<td align="left">CFG Lock (MSR 0xE2 write protection)</td>
-<td align="left">CFG 锁 (MSR 0xE2 写入保护)</td>
-</tr>
-<tr>
-<td align="left">VT-d</td>
-<td align="left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-d</a></td>
-</tr>
-<tr>
-<td align="left">CSM</td>
-<td align="left">兼容性支持模块</td>
-</tr>
-</tbody></table>
-<p>启用如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left">英文</th>
-<th align="left">中文</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">VT-x</td>
-<td align="left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-x</a></td>
-</tr>
-<tr>
-<td align="left">Above 4G decoding</td>
-<td align="left">大于 4G 地址空间解码</td>
-</tr>
-<tr>
-<td align="left">Hyper Threading</td>
-<td align="left">处理器超线程</td>
-</tr>
-<tr>
-<td align="left">Execute Disable Bit</td>
-<td align="left">执行禁止位</td>
-</tr>
-<tr>
-<td align="left">EHCI/XHCI Hand-off</td>
-<td align="left">接手 EHCI/XHCI 控制</td>
-</tr>
-<tr>
-<td align="left">OS type: other types</td>
-<td align="left">操作系统类型: 其他</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>建设工程施工管理</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdownlint的设置知识</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
-<ul>
-<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>多个项目用逗号分隔开。</p>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Markdownlint</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VS Code中配置Github</title>
     <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
-    <content><![CDATA[<p>配置步骤：</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>配置步骤：</p>
 <h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
 <figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -472,7 +453,7 @@
   <entry>
     <title>Markdownlint规则详细介绍及自定义参数设置</title>
     <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
 <p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
 <a id="more"></a>
 <ul>
@@ -643,20 +624,9 @@
       </tags>
   </entry>
   <entry>
-    <title>思维导图测试</title>
-    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1>]]></content>
-      <categories>
-        <category>思维导图</category>
-      </categories>
-      <tags>
-        <tag>思维导图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
     <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
 <ul>
 <li><p>git config –global credential.helper store</p>
 <p>命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。</p>
@@ -673,9 +643,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdownlint的设置知识</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
+<ul>
+<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多个项目用逗号分隔开。</p>
+
+    <div id="aplayer-MWPsvEFU" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Markdownlint</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二级建造师-建设工程施工管理笔记</title>
     <url>/2020/04/24/2020-04-24-%E4%BA%8C%E7%BA%A7%E5%BB%BA%E9%80%A0%E5%B8%88-%E5%BB%BA%E8%AE%BE%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="建设工程施工管理"><a href="#建设工程施工管理" class="headerlink" title="建设工程施工管理"></a>建设工程施工管理</h1><hr>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="建设工程施工管理"><a href="#建设工程施工管理" class="headerlink" title="建设工程施工管理"></a>建设工程施工管理</h1><hr>
 <h1 id="1-2Z101011"><a href="#1-2Z101011" class="headerlink" title="1. 2Z101011"></a>1. 2Z101011</h1><p>（1）建设工程管理的<strong>核心要素：费用、进度、质量</strong></p>
 <p>（2）注意区分：<strong>费用</strong>对于各方追求的目标(不同的叫法)</p>
 <p><strong>业主方：投资目标</strong>   </p>
@@ -731,7 +723,7 @@
   <entry>
     <title>免费个人博客搭建详解（转载）</title>
     <url>/2020/04/24/2020-04-24-%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E8%A7%A3/</url>
-    <content><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/1233754-6f9a794ed9725f8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://upload-images.jianshu.io/upload_images/1233754-6f9a794ed9725f8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
 <p>免费个人博客搭建思维导图</p>
 <h3 id="作者：李旺成"><a href="#作者：李旺成" class="headerlink" title="作者：李旺成"></a>作者：<a href="https://link.jianshu.com/?t=https://github.com/DIY-green/" target="_blank" rel="noopener">李旺成</a></h3><h3 id="时间：2016年4月27日"><a href="#时间：2016年4月27日" class="headerlink" title="时间：2016年4月27日"></a>时间：2016年4月27日</h3><hr>
 <p><img src="https://upload-images.jianshu.io/upload_images/1233754-07f2a3d6f243ab36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/971/format/webp" alt="img"></p>
@@ -971,9 +963,24 @@
       </tags>
   </entry>
   <entry>
+    <title>思维导图测试</title>
+    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+
+    <div id="aplayer-bYwMpUCu" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>思维导图</category>
+      </categories>
+      <tags>
+        <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo中如何设置“阅读全文”</title>
     <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
-    <content><![CDATA[<p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
 <ol>
 <li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
 </ol>
@@ -1010,7 +1017,7 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/04/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
@@ -1023,12 +1030,15 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
+
+			<script>
+				console.error("TypeError: Cannot read property '_id' of undefined");
+			</script>]]></content>
   </entry>
   <entry>
     <title>更改Hexo Next主题的fontawesome版本至最新</title>
     <url>/2020/04/25/2020-04-25-%E6%9B%B4%E6%94%B9hexo%20next%E4%B8%BB%E9%A2%98%E7%9A%84fontawesome%E7%89%88%E6%9C%AC%E8%87%B3%E6%9C%80%E6%96%B0/</url>
-    <content><![CDATA[<p>由于在后续又发现在其他地方也用到了icon，所以需要大量更改配置。<strong>如果不会写进程的还是别改了。</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>由于在后续又发现在其他地方也用到了icon，所以需要大量更改配置。<strong>如果不会写进程的还是别改了。</strong></p>
 <p>next的fontawesome默认版本是4.6.2，在写本文时，fontawesome的最新版本是5.8.1。貌似fontawesome在5.0.0版本之后改版了。总之一直出现方框乱码。<br>后来发现，现在的fontawesome链接已经跟以前不一样了，它现在分为3大类别。</p>
 <a id="more"></a>
 <p>现在的使用方法是：在next主题的_config.xml中搜索fontawesome，并更改属性<code>fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css</code>，注意里面的文档是all.min.css，而不是font-awesom.min.css。<br>但是这样更改之后还是会出现方框乱码，原因是next默认使用的fa的类，而有时候我们需要使用fab或其他的类。所以需要修改一下源代码。<br>找到layout/_macro/menu/menu-item.swig，定位class=”menu-item-icon，将后面的“fa fa-fw fa-”删去。以后再修改icon不能只加一个名字了。可以像我这样修改：<code>assorted: /assorted || fa fa-fw fa-layer-group</code>。<br>可以看到我将icon的名称补全了。如果想用fab的类，可以像这样修改：<code>python: /python || fab fa-fw fa-python</code>。以此类推。</p>
