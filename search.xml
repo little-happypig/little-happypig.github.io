@@ -99,6 +99,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdownlint的设置知识</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
+<ul>
+<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多个项目用逗号分隔开。</p>
+
+    <div id="aplayer-kXBHkKuL" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Markdownlint</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
@@ -424,28 +446,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdownlint的设置知识</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
-<ul>
-<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>多个项目用逗号分隔开。</p>
-
-    <div id="aplayer-tsgZpZiu" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
-    ></div>]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Markdownlint</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdownlint规则详细介绍及自定义参数设置</title>
     <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
@@ -650,7 +650,7 @@
     <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
 
-    <div id="aplayer-sKHzdmJq" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-mcDfRzMv" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
     ></div>]]></content>
       <categories>
