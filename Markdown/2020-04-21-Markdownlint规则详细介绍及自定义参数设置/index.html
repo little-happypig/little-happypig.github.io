@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Markdownlint规则详细介绍及自定义参数设置 - 安肆 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://little-happypig.github.io.git/Markdown/2020-04-21-Markdownlint规则详细介绍及自定义参数设置/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Markdown" title="Markdown">Markdown</a>
+                            
+                              <a class="tag" href="/tags/#Markdownlint" title="Markdownlint">Markdownlint</a>
+                            
+                        </div>
+                        <h1>Markdownlint规则详细介绍及自定义参数设置</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 安肆 on
+                            2020-04-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">安肆</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="markdownlint规则详细介绍及自定义参数设置">Markdownlint规则详细介绍及自定义参数设置</h1>
+<p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
+<p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
+<a id="more"></a>
+<ul>
+<li>MD001 - Heading levels should only increment by one level at a time<br>
+标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</li>
+</ul>
+<p>MD002 - First heading should be a top level heading<br>
+文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</p>
+<p>参数：<br>
+“level”：指定最高级标题的级数，默认是1</p>
+<ul>
+<li>MD003 - Heading style<br>
+整篇文档要采用一致的标题格式</li>
+</ul>
+<p>参数：<br>
+“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是&quot;consistent&quot;，也就是整篇文档一致</p>
+<p>标题格式必须统一，一般不能混用，但&quot;setext_with_atx&quot;, &quot;setext_with_atx_closed&quot;格式可以在&quot;setext&quot;格式二级标题后接着使用&quot;atx&quot;或&quot;atx_closed&quot;格式的标题</p>
+<ul>
+<li>MD004 - Unordered list style<br>
+整篇文档定义无序列表的格式要一致</li>
+</ul>
+<p>参数：<br>
+“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是&quot;consistent&quot;</p>
+<ul>
+<li>
+<p>MD005 - Inconsistent indentation for list items at the same level<br>
+同一级的列表缩进必须一致<br>
+在有序列表中，前面的数字序号可以左对齐，也可以右对齐</p>
+</li>
+<li>
+<p>MD006 - Consider starting bulleted lists at the beginning of the line<br>
+1级列表不能缩进</p>
+</li>
+<li>
+<p>MD007 - Unordered list indentation<br>
+无序列表嵌套缩进时默认采用两个空格</p>
+</li>
+</ul>
+<p>参数：<br>
+“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
+<ul>
+<li>MD009 - Trailing spaces<br>
+行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</li>
+</ul>
+<p>参数：<br>
+“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>
+&quot;list_item_empty_lines&quot;：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
+<ul>
+<li>MD010 - Hard tabs<br>
+不能使用tab键缩进，要使用空格</li>
+</ul>
+<p>参数：<br>
+“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
+<ul>
+<li>
+<p>MD011 - Reversed link syntax<br>
+检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</p>
+</li>
+<li>
+<p>MD012 - Multiple consecutive blank lines<br>
+文档中不能有连续的空行，在代码块中此规则不会生效</p>
+</li>
+</ul>
+<p>参数：<br>
+“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
+<ul>
+<li>MD013 - Line length<br>
+默认行的最大长度是80，此规则对代码块、表格、标题也生效</li>
+</ul>
+<p>参数：<br>
+“line_length”：指定行的最大长度，默认是80<br>
+&quot;heading_line_length&quot;：指定标题行的最大长度，默认是80<br>
+&quot;code_blocks&quot;：指定规则是否(true or false)对代码块生效，默认true<br>
+&quot;tables&quot;：指定规则是否(true or false)对表格生效，默认true<br>
+&quot;hesdings&quot;：指定规则是否(true or false)对标题生效，默认true</p>
+<ul>
+<li>MD014 - Dollar signs used before commands without showing output<br>
+在代码块中，终端命令前不需要有美元符号($)<br>
+如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号($)，如：</li>
+</ul>
+<p>$ ls<br>
+foo bar<br>
+$ cat foo<br>
+hello world</p>
+<ul>
+<li>
+<p>MD018 - No space after hash on atx style heading<br>
+在&quot;atx&quot;格式的标题中，#号和文字间需用一个空格隔开</p>
+</li>
+<li>
+<p>MD019 - Multiple spaces after hash on atx style heading<br>
+在&quot;atx&quot;格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li>
+<p>MD020 - No space inside hashes on closed atx style heading<br>
+在&quot;closed_atx&quot;格式的标题中，文字和前后的#号之间需用一个空格隔开</p>
+</li>
+<li>
+<p>MD021 - Multiple spaces inside hashes on closed atx style heading<br>
+在&quot;closed_atx&quot;格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li>
+<p>MD022 - Headings should be surrounded by blank lines<br>
+标题行的上下行必须都是空行</p>
+</li>
+</ul>
+<p>参数：<br>
+“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>
+&quot;lines_below&quot;：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
+<p>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</p>
+<ul>
+<li>
+<p>MD023 - Headings must start at the beginning of the line<br>
+标题行不能缩进</p>
+</li>
+<li>
+<p>MD024 - Multiple headings with the same content<br>
+文档不能有内容重复的标题</p>
+</li>
+</ul>
+<p>参数：<br>
+“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
+<ul>
+<li>MD025 - Multiple top level headings in the same document<br>
+同一文档只能有一个最高级的标题，默认是只能有一个1级标题</li>
+</ul>
+<p>参数：<br>
+“level”：指定文档最高级的标题，默认是1<br>
+&quot;front_matter_title&quot;：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为&quot;&quot;</p>
+<ul>
+<li>MD026 - Trailing punctuation in heading<br>
+标题行末尾不能有以下标点符号：&quot;.,;:!?&quot;</li>
+</ul>
+<p>参数：<br>
+“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是&quot;.,;:!?&quot;</p>
+<p>此规则默认的是英文的标点符号，中文标点符号不在规则之内</p>
+<ul>
+<li>
+<p>MD027 - Multiple spaces after blockquote symbol<br>
+创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</p>
+</li>
+<li>
+<p>MD028 - Blank line inside blockquote<br>
+两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</p>
+</li>
+<li>
+<p>MD029 - Ordered list item prefix<br>
+有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</p>
+</li>
+</ul>
+<p>参数：<br>
+“style”：字符串，指定前缀序号的格式，(“one”,“ordered”,“one_or_ordered”,“zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是&quot;one_or_ordered&quot;</p>
+<p>本条规则支持在前缀序号中补0，以实现对齐，如：</p>
+<p>…</p>
+<ol start="8">
+<li>one</li>
+<li>two</li>
+<li>three<br>
+…</li>
+</ol>
+<ul>
+<li>MD030 - Spaces after list markers<br>
+列表（有序、无序）的前缀符号和文字之间用1个空格隔开<br>
+在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</li>
+</ul>
+<p>参数：<br>
+“ul_single”,“ol_single”,“ul_multi”,“ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
+<ul>
+<li>
+<p>MD031 - Fenced code blocks should be surrounded by blank lines<br>
+单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</p>
+</li>
+<li>
+<p>MD032 - Lists should be surrounded by blank lines<br>
+列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>
+列表的缩进必须一致，否则会警告</p>
+</li>
+<li>
+<p>MD033 - Inline HTML<br>
+文档中不允许使用HTML语句</p>
+</li>
+</ul>
+<p>参数：<br>
+“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
+<ul>
+<li>
+<p>MD034 - Bare URL used<br>
+单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</p>
+</li>
+<li>
+<p>MD035 - Horizontal rule style<br>
+创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</p>
+</li>
+</ul>
+<p>参数：<br>
+“style”：字符串，指定创建水平线的方式，值有：(“consistent”,&quot;***&quot;,&quot;—&quot;,&quot;___&quot;)，默认是&quot;consistent&quot;</p>
+<ul>
+<li>MD036 - Emphasis used instead of a heading<br>
+不能用强调代替标题</li>
+</ul>
+<p>参数：<br>
+“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是&quot;.,;:!?&quot;</p>
+<p>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</p>
+<ul>
+<li>
+<p>MD037 - Spaces inside emphasis markers<br>
+用于创建强调的符号和强调的的文字之间不能有空格</p>
+</li>
+<li>
+<p>MD038 - Spaces inside code span elements<br>
+当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格<br>
+如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</p>
+</li>
+<li>
+<p>MD039 - Spaces inside link text<br>
+链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</p>
+</li>
+</ul>
+<p><a href="http://www.baidu.com" title="百 度" target="_blank" rel="noopener">百 度</a></p>
+<ul>
+<li>
+<p>MD040 - Fenced code blocks should have a language specified<br>
+单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</p>
+</li>
+<li>
+<p>MD041 - First line in file should be a top level heading<br>
+文档的第一个非空行应该是文档最高级的标题，默认是1级标题</p>
+</li>
+</ul>
+<p>参数：<br>
+“level”：指定文档最高级的标题，默认是1<br>
+&quot;front_matter_title&quot;：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为&quot;&quot;</p>
+<ul>
+<li>
+<p>MD042 - No empty links<br>
+链接的地址不能为空</p>
+</li>
+<li>
+<p>MD043 - Required heading structure<br>
+要求标题遵循一定的结构，默认是没有规定的结构(“null”)</p>
+</li>
+</ul>
+<p>参数：<br>
+“headings”：字符串数组，指定标题需要遵循的结构，默认是&quot;null&quot;，可以自行指定结构，如；</p>
+<p>[<br>
+&quot;# head&quot;,<br>
+&quot;## item&quot;,<br>
+&quot;### detail&quot;,<br>
+&quot;<em>&quot;<br>
+]<br>
+星号(</em>)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</p>
+<ul>
+<li>MD044 - Proper names should have the correct capitalization<br>
+指定一些名称，会检查它是否有正确的大写</li>
+</ul>
+<p>参数：<br>
+“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>
+“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>
+一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数&quot;names&quot;中，防止写错</p>
+<ul>
+<li>
+<p>MD045 - Images should have alternate text (alt text)<br>
+图片链接必须包含描述文本（alt text）</p>
+</li>
+<li>
+<p>MD046 - Code block style<br>
+整篇文档采用一致的代码格式</p>
+</li>
+</ul>
+<p>参数：<br>
+“style”: 字符串，指定代码块定义格式，有（“consistent”,“fenced”,“indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
+<ul>
+<li>
+<p>MD047 - Files should end with a single newline character<br>
+文档需用一个空行结尾</p>
+</li>
+<li>
+<p>MD048 - Code fence style<br>
+Tags: code</p>
+</li>
+</ul>
+<p>Aliases: code-fence-style</p>
+<p>Parameters: style (“consistent”, “tilde”, “backtick”; default “consistent”)</p>
+<p>This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style:</p>
+<p>The configured list style can be a specific symbol to use (backtick, tilde), or can require that usage be consistent within the document.</p>
+<p>Rationale: Consistent formatting makes it easier to understand a document.</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/VS-Code/2020-04-21-解决使用Vs code上传github需要输入密码和用户名解/" data-toggle="tooltip" data-placement="top" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/VS-Code/2020-04-21-VS Code中配置GitHub/" data-toggle="tooltip" data-placement="top" title="VS Code中配置Github">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Markdown" title="Markdown">Markdown</a>
+                        
+                          <a class="tag" href="/tags/#Markdownlint" title="Markdownlint">Markdownlint</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog 安肆</a></li>
+                    
+                        <li><a href="http://dockone.io/people/安肆" target="_blank">DockOne 安肆</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/huweihuang" target="_blank">阿里云栖社区 安肆</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                            
+                                    
+
+                                            
+
+                                                    
+
+                                                            
+                                                                <li>
+                                                                    <a target="_blank" href="https://github.com/huweihuang">
+                                                                        <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                                                                    </a>
+                                                                </li>
+                                                                
+
+                                                                    
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy;
+                    安肆
+                        2020
+                            <br> Theme by <a href="http://beantech.org">BeanTech</a>
+                            <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> re-Ported by <a href="http://www.安肆.com">安肆</a> |
+                            <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/js/hux-blog.min.js"></script>
+
+
+            <!-- async load function -->
+            <script>
+                function async(u, c) {
+                    var d = document,
+                        t = 'script',
+                        o = d.createElement(t),
+                        s = d.getElementsByTagName(t)[0];
+                    o.src = u;
+                    if (c) {
+                        o.addEventListener('load', function(e) {
+                            c(null, e);
+                        }, false);
+                    }
+                    s.parentNode.insertBefore(o, s);
+                }
+            </script>
+
+            <!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+            <!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+            <!-- jquery.tagcloud.js -->
+            <script>
+                // only load tagcloud.js in tag.html
+                if ($('#tag_cloud').length !== 0) {
+                    async("https://little-happypig.github.io.git/js/jquery.tagcloud.js", function() {
+                        $.fn.tagcloud.defaults = {
+                            //size: {start: 1, end: 1, unit: 'em'},
+                            color: {
+                                start: '#bbbbee',
+                                end: '#0085a1'
+                            },
+                        };
+                        $('#tag_cloud a').tagcloud();
+                    })
+                }
+            </script>
+
+            <!--fastClick.js -->
+            <script>
+                async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function() {
+                    var $nav = document.querySelector("nav");
+                    if ($nav) FastClick.attach($nav);
+                })
+            </script>
+
+
+            <!-- Google Analytics -->
+
+            
+                <script>
+                    // dynamic User by Hux
+                    var _gaId = 'UA-XXXXXXXX-X';
+                    var _gaDomain = 'yoursite';
+
+                    // Originial
+                    (function(i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function() {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                    ga('create', _gaId, _gaDomain);
+                    ga('send', 'pageview');
+                </script>
+
+                
+
+
+                    <!-- Baidu Tongji -->
+                    
+                        <script>
+                            // dynamic User by Hux
+                            var _baId = 'xxx';
+
+                            // Originial
+                            var _hmt = _hmt || [];
+                            (function() {
+                                var hm = document.createElement("script");
+                                hm.src = "//hm.baidu.com/hm.js?" + _baId;
+                                var s = document.getElementsByTagName("script")[0];
+                                s.parentNode.insertBefore(hm, s);
+                            })();
+                        </script>
+                        
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://little-happypig.github.io.git/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

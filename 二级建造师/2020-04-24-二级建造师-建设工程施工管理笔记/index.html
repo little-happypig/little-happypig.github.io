@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          二级建造师-建设工程施工管理笔记 - 安肆 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://little-happypig.github.io.git/二级建造师/2020-04-24-二级建造师-建设工程施工管理笔记/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#建设工程施工管理" title="建设工程施工管理">建设工程施工管理</a>
+                            
+                              <a class="tag" href="/tags/#二级建造师" title="二级建造师">二级建造师</a>
+                            
+                        </div>
+                        <h1>二级建造师-建设工程施工管理笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 安肆 on
+                            2020-04-24
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">安肆</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="建设工程施工管理">建设工程施工管理</h1>
+<hr>
+<h1 id="1-2z101011-建设工程项目管理的类型">1. 2Z101011 建设工程项目管理的类型</h1>
+<p>（1）建设工程管理的<strong>核心要素：费用、进度、质量</strong></p>
+<p>（2）注意区分：<strong>费用</strong>对于各方追求的目标(不同的叫法)</p>
+<p><strong>业主方：投资目标</strong></p>
+<p><strong>施工方：成本目标</strong>。<u><strong>这个是贯彻正本教程始终的管理目标原则</strong></u></p>
+<p>（3）<strong>业主方</strong>是建设工程项目生产过程的<strong>总集成者</strong>，是建设工程生产过程的<strong>总组织者</strong>，业主方的项目管理是<strong>管理的核心</strong></p>
+<h2 id="业主方项目管理的目标和任务-其管理工作涉及实施阶段的全过程">业主方项目管理的目标和任务 <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u></h2>
+<p>注意<strong>费用、进度、质量</strong>也是其管理的目标，<strong>三控</strong>（<code>安全、合同、信息</code>）<strong>三管</strong>（<code>投资、进度、质量</code>）<strong>一协调</strong>（<code>组织和协调</code>）</p>
+<ul>
+<li>
+<p>项目的质量目标不仅涉及施工的质量，还包括设计质量、材料质量、设备质量和影响项目运行或运营的环境质量。</p>
+</li>
+<li>
+<p>建设工程项目的**<u>全寿命周期</u>**包括：<code>决策阶段、实施阶段和使用阶段</code></p>
+</li>
+<li>
+<p>业主方的项目管理工作涉及项目实施的全过程</p>
+</li>
+<li>
+<p>项目的实施阶段包括：<code>设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</code></p>
+<img src="D:\SystemFiles\Documents\二级建造师\images\2z101000\建筑工程项目的决策阶段和实施阶段.png" style="width:800px"> 
+</li>
+<li>
+<p><code>安全管理是项目管理中最重要的任务</code></p>
+</li>
+</ul>
+<h2 id="设计方项目管理的目标和任务-其管理工作涉及实施阶段的全过程">设计方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2>
+<ul>
+<li>
+<p>设计的<code>成本（区别于业主方的投资目标、都是资金，叫法不同而已）</code>目标、设计的<code>进度</code>目标和设计的<code>质量</code>目标</p>
+</li>
+<li>
+<p>注意其<code>三管三控一协调</code>与<strong>业主方</strong>和后节的<strong>供货方</strong>、<strong>建设项目工程总承包方</strong>的项目管理目标任务的区别</p>
+</li>
+</ul>
+<ul>
+<li>设计方项目管理的任务包括:<br>
+(1)与设计工作有关的安全管理<br>
+(2)<code>设计成本控制和与设计工作有关的工程造价控制</code>  <code>注意这一项与业主方的区别</code><br>
+(3)设计进度控制<br>
+(4)设计质量控制<br>
+(5)设计合同管理<br>
+(6)设计信息管理<br>
+(7)与设计工作有关的组织和协调。</li>
+</ul>
+<h2 id="供货方项目管理的目标和任务-其管理工作涉及实施阶段的全过程">供货方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2>
+<ul>
+<li>供货方项目管理的主要任务包括:<br>
+(1)供货的安全管理;<br>
+(2)供货方的<code>成本</code>控制;<br>
+(3)供货的进度控制;<br>
+(4)供货的质量控制;<br>
+(5)供货的合同管理;<br>
+(6)供货的信息管理;<br>
+(7)与供货有关的组织与协调。</li>
+</ul>
+<h2 id="建设项目工程总承包方项目管理的目标和任务-其管理工作涉及实施阶段的全过程">建设项目工程总承包方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2>
+<ul>
+<li>
+<p><strong><u>涉及项目实施阶段的全过程,即设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</u></strong></p>
+</li>
+<li>
+<p>参考《建设项目工程总承包管理规范》GB/50358-2017的规定,建设项目工程总承包方的管理工作涉及：<br>
+(1)项目设计管理<br>
+(2)项目采购管理<br>
+(3)项目施工管理<br>
+(4)项目试运行管理和项目收尾等。</p>
+</li>
+<li>
+<p>其中属于项目总承包方项目管理的任务包括：<br>
+(1)项目风险管理<br>
+(2)项目进度管理<br>
+(3)项目质量管理<br>
+(4)项目费用管理<br>
+(5)项目安全、职业健康与环境管理<br>
+(6)项目资源管理<br>
+(7)项目沟通与信息管理<br>
+(8)项目合同管理等。</p>
+</li>
+<li>
+<p>注意区别：  <strong>施工总承包</strong> 涉及<code>施工</code>阶段</p>
+</li>
+</ul>
+<p>​                                   <strong>工程总承包</strong>不但有<code>施工</code>还包含有<code>设计</code></p>
+<hr>
+<h1 id="2-2z101012-施工方项目管理的目标和任务">2. 2Z101012 施工方项目管理的目标和任务</h1>
+<ul>
+<li>
+<p>施工方的管理目标同样是包括： 施工的<code>成本</code>、<code>进度</code>、<code>质量</code>目标，管理过程涉及<code>施工阶段的全过程</code>。<code>三管三控一协调</code>。</p>
+</li>
+<li>
+<p>施工方是承担施工任务的单位的总称谓，它可能是施工总承包方、施工总承包管理方、分包施工方、建设项目总承包的施工任务执行方或仅仅提供施工劳务的参与方。<code>特别注意的是不包括工程项目总承包方的</code></p>
+</li>
+<li>
+<p>施工总承包方（GC，General Contractor）对所承包的建设工程承担施工任务的<code>执行</code>和<code>组织</code>的总责任</p>
+</li>
+<li>
+<p>施工总承包管理方（MC，Managing Contractor）对所承包的建设工程承担施工任务<code>组织</code>的总责任</p>
+</li>
+<li>
+<p>（1）一般情况下，施工总承包管理方不承担施工任务，它主要进行施工的总体管理和协调。如果施工总承包管理方通过投标（在平等条件下竞标）获得一部分施工任务，则它也可参与施工。<br>
+（2）一般情况下，施工总承包管理方不与分包方和供货方直接签订施工合同，这些合同都由业主方直接签订。但若施工总承包管理方应业主方的要求，协助业主参与施工的招标和发包工作，其参与的工作深度由业主方决定。业主方也可能要求施工总承包管理方负责整个施工的招标和发包工作。<br>
+（3）不论是业主方选定的分包方，还是经业主方授权由施工总承包管理方选定的分包方，施工总承包管理方都承担对其的组织和管理责任。</p>
+<p>（4）施工总承包管理方和施工总承包方承担相同的管理任务和责任，即负责整个工程的施工<code>安全</code>控制、施工<code>总进度</code>控制、施工<code>质量</code>控制和<code>施工的组织与协调</code>等。</p>
+<p><code>由业主方选定的分包方应经施工总承包管理方的认可</code></p>
+</li>
+<li>
+<p>建设项目工程总承包的主要意义是通过设计与施工过程的组织集成，促进设计与施工的紧密结合，以达到为项目建设增值的目的。</p>
+</li>
+</ul>
+<h1 id="3-2z101020-施工管理的组织">3. 2Z101020 施工管理的组织</h1>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/思维导图/2020-04-21-思维导图测试/" data-toggle="tooltip" data-placement="top" title="思维导图测试">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/Jekyll/2020-04-21-Jekyll中关于永久链接(Permalinks)的设置规则/" data-toggle="tooltip" data-placement="top" title="Jekyll中关于永久链接(Permalinks)的设置规则">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#建设工程施工管理" title="建设工程施工管理">建设工程施工管理</a>
+                        
+                          <a class="tag" href="/tags/#二级建造师" title="二级建造师">二级建造师</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog 安肆</a></li>
+                    
+                        <li><a href="http://dockone.io/people/安肆" target="_blank">DockOne 安肆</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/huweihuang" target="_blank">阿里云栖社区 安肆</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                            
+                                    
+
+                                            
+
+                                                    
+
+                                                            
+                                                                <li>
+                                                                    <a target="_blank" href="https://github.com/huweihuang">
+                                                                        <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                                                                    </a>
+                                                                </li>
+                                                                
+
+                                                                    
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy;
+                    安肆
+                        2020
+                            <br> Theme by <a href="http://beantech.org">BeanTech</a>
+                            <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> re-Ported by <a href="http://www.安肆.com">安肆</a> |
+                            <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/js/hux-blog.min.js"></script>
+
+
+            <!-- async load function -->
+            <script>
+                function async(u, c) {
+                    var d = document,
+                        t = 'script',
+                        o = d.createElement(t),
+                        s = d.getElementsByTagName(t)[0];
+                    o.src = u;
+                    if (c) {
+                        o.addEventListener('load', function(e) {
+                            c(null, e);
+                        }, false);
+                    }
+                    s.parentNode.insertBefore(o, s);
+                }
+            </script>
+
+            <!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+            <!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+            <!-- jquery.tagcloud.js -->
+            <script>
+                // only load tagcloud.js in tag.html
+                if ($('#tag_cloud').length !== 0) {
+                    async("https://little-happypig.github.io.git/js/jquery.tagcloud.js", function() {
+                        $.fn.tagcloud.defaults = {
+                            //size: {start: 1, end: 1, unit: 'em'},
+                            color: {
+                                start: '#bbbbee',
+                                end: '#0085a1'
+                            },
+                        };
+                        $('#tag_cloud a').tagcloud();
+                    })
+                }
+            </script>
+
+            <!--fastClick.js -->
+            <script>
+                async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function() {
+                    var $nav = document.querySelector("nav");
+                    if ($nav) FastClick.attach($nav);
+                })
+            </script>
+
+
+            <!-- Google Analytics -->
+
+            
+                <script>
+                    // dynamic User by Hux
+                    var _gaId = 'UA-XXXXXXXX-X';
+                    var _gaDomain = 'yoursite';
+
+                    // Originial
+                    (function(i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function() {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                    ga('create', _gaId, _gaDomain);
+                    ga('send', 'pageview');
+                </script>
+
+                
+
+
+                    <!-- Baidu Tongji -->
+                    
+                        <script>
+                            // dynamic User by Hux
+                            var _baId = 'xxx';
+
+                            // Originial
+                            var _hmt = _hmt || [];
+                            (function() {
+                                var hm = document.createElement("script");
+                                hm.src = "//hm.baidu.com/hm.js?" + _baId;
+                                var s = document.getElementsByTagName("script")[0];
+                                s.parentNode.insertBefore(hm, s);
+                            })();
+                        </script>
+                        
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://little-happypig.github.io.git/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

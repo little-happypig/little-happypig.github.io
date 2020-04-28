@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Jekyll中关于永久链接(Permalinks)的设置规则 - 安肆 | Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://little-happypig.github.io.git/Jekyll/2020-04-21-Jekyll中关于永久链接(Permalinks)的设置规则/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/article_header/article_bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#Jekyll" title="Jekyll">Jekyll</a>
+                            
+                              <a class="tag" href="/tags/#Permalinks" title="Permalinks">Permalinks</a>
+                            
+                        </div>
+                        <h1>Jekyll中关于永久链接(Permalinks)的设置规则</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by 安肆 on
+                            2020-04-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">安肆</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="永久链接permalinks">永久链接(Permalinks)</h1>
+<p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
+<a id="more"></a>
+<p>默认配置为 <code>date</code>。</p>
+<p>永久链接的模板用以冒号为前缀的关键词标记动态内容，比如 <code>date</code> 代表 <code>/:categories/:year/:month/:day/:title.html</code>。</p>
+<h2 id="模板变量"><a href="#%E6%A8%A1%E6%9D%BF%E5%8F%98%E9%87%8F">模板变量</a></h2>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>year</code></td>
+<td>文章文件名中的年份，格式如 <code>2013</code></td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>文章文件名中的月份，格式如 <code>01</code></td>
+</tr>
+<tr>
+<td><code>i_month</code></td>
+<td>文章文件名中的月份，不包含首位的零，格式如 <code>1</code></td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>文章文件名中的日期，格式如 <code>08</code></td>
+</tr>
+<tr>
+<td><code>i_day</code></td>
+<td>文章文件名中的日期，不包含首位的零，格式如 <code>8</code></td>
+</tr>
+<tr>
+<td><code>short_year</code></td>
+<td>文章文件名中的年份，后两位，格式如 <code>13</code></td>
+</tr>
+<tr>
+<td><code>hour</code></td>
+<td>时钟，24 小时制，日期以文章的头信息中的 <code>date</code> 为基准。（00…23）</td>
+</tr>
+<tr>
+<td><code>minute</code></td>
+<td>当前时钟内的分钟，日期以文章的头信息中的 <code>date</code> 为基准。（00…59）</td>
+</tr>
+<tr>
+<td><code>second</code></td>
+<td>当前分钟内的秒钟，日期以文章的头信息中的 <code>date</code> 为基准。（00…59）</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>由文件的文件名中确定的标题，可以被文件头信息中的 <code>slug</code> 覆盖。</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td>由文件的文件名中确定的　Slugified title（除数字和字母之外的字符们会被取代为连字符），可以被文件头信息中的 <code>slug</code> 覆盖。</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>文章类型。如果一篇文章有多个类型，Jekyll 会创建一个目录（例如，<code>/category1/category2</code>）。Jekyll 也可以自动解析 URLs 中的双斜线 <code>//</code>，所以如果当前文章没有设定类型，则忽略该项。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="内建永久链接类型"><a href="#%E5%86%85%E5%BB%BA%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B">内建永久链接类型</a></h2>
+<p>当你能够通过 <a href="http://jekyllcn.com/docs/permalinks/#template-variables" target="_blank" rel="noopener">template variables</a> 来指定一个自定义永久链接时，方便起见，Jekyll 还提供了下列的内建类型。</p>
+<table>
+<thead>
+<tr>
+<th>永久链接类型</th>
+<th>URL 模板</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>/:categories/:year/:month/:day/:title.html</code></td>
+</tr>
+<tr>
+<td><code>pretty</code></td>
+<td><code>/:categories/:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>ordinal</code></td>
+<td><code>/:categories/:year/:y_day/:title.html</code></td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td><code>/:categories/:title.html</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="页面pages和集合collections"><a href="#%E9%A1%B5%E9%9D%A2%EF%BC%88Pages%EF%BC%89%E5%92%8C%E9%9B%86%E5%90%88%EF%BC%88collections">页面（Pages）和集合（collections）</a></h2>
+<p><code>permalink</code> 配置用来指定博客的永久链接模板。页面和集合同样有它们自己的默认永久链接模板；页面的默认模板是 <code>/:path/:basename</code>，集合的默认模板是 /:collection/:path`。</p>
+<p>这些样式被修改用来匹配在文章永久链接设置里的后缀式。例如，含有反斜杠 <code>/</code> 的永久链接模板 <code>pretty</code> 会更新页面的永久链接，使其同样包含一个反斜杠： <code>/:path/:basename/</code>。含有文件扩展名的永久链接模板 <code>date</code> 会更新页面的永久链接，使其同样包含文件扩展名： <code>/:path/:basename:output_ext</code>。这对任意自定义永久链接模板同样适用。</p>
+<p>单独页面或集合文件的永久链接总能够在页面或者文件的<a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">头信息</a>里重写覆盖。另外，给定的集合的永久链接能在<a href="http://jekyllcn.com/docs/collections/" target="_blank" rel="noopener">集合配置</a>中自定义设置。</p>
+<h2 id="永久链接模板举例"><a href="#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5%E6%A8%A1%E6%9D%BF%E4%B8%BE%E4%BE%8B">永久链接模板举例</a></h2>
+<p>比如文件名： <code>/2009-04-29-slap-chop.textile</code></p>
+<table>
+<thead>
+<tr>
+<th>URL 模板</th>
+<th>对应的永久链接 URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>没有配置或 <code>permalink: date</code></td>
+<td><code>/2009/04/29/slap-chop.html</code></td>
+</tr>
+<tr>
+<td><code>pretty</code></td>
+<td><code>/2009/04/29/slap-chop/</code></td>
+</tr>
+<tr>
+<td><code>/:month-:day-:year/:title.html</code></td>
+<td><code>/04-29-2009/slap-chop.html</code></td>
+</tr>
+<tr>
+<td><code>/blog/:year/:month/:day/:title</code></td>
+<td><code>/blog/2009/04/29/slap-chop/index.html</code></td>
+</tr>
+<tr>
+<td><code>/:year/:month/:title</code>具体细节见于 <a href="#%E6%97%A0%E6%89%A9%E5%B1%95%E5%90%8D%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5">无扩展名链接（Extensionless permalinks）</a>。</td>
+<td><code>/2009/04/slap-chop</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="无扩展名永久链接"><a href="#%E6%97%A0%E6%89%A9%E5%B1%95%E5%90%8D%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5">无扩展名永久链接</a></h2>
+<p>Jekyll 支持即不包含反斜杠也不包含文件扩展名的永久链接，但这需要网络服务端的额外支持才能正常工作。当使用无扩展名永久链接时，写到硬盘上的输出文件依然会保留正确的文件扩展名（典型的比如，<code>.html</code>），所以网络服务端必须能够 map 那些没有文件扩展名的文件的请求。</p>
+<p>无论 <a href="http://jekyllcn.com/docs/github-pages/" target="_blank" rel="noopener">GitHub Pages</a> 还是 Jekyll 内置的 WEBrick server 都能够正确处理这些请求，不需要任何额外工作。</p>
+<h3 id="apache"><a href="#Apache">Apache</a></h3>
+<p>Apache 网络服务端对内容协商（content negotiation）有着非常广泛的支持，而且能够通过在你的 <code>httpd.conf</code> 或者 <code>.htaccess</code> 文件中设置 <a href="https://httpd.apache.org/docs/current/content-negotiation.html#multiviews" target="_blank" rel="noopener">multiviews</a> 选项来处理无扩展名的 URLs：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Options +MultiViews</span><br></pre></td></tr></table></figure>
+<h3 id="nginx"><a href="#Nginx">Nginx</a></h3>
+<p><a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files" target="_blank" rel="noopener">try_files</a> 指令允许你指定一个文件列表搜索，用来处理请求。如果请求的 URL 的精确匹配未找到的的话，下列配置会让 nginx 搜索含有 <code>.html</code> 扩展名的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">try_files $uri $uri.html $uri/ =404;</span><br></pre></td></tr></table></figure>
+<p><a href="http://jekyllrb.com/docs/permalinks/" target="_blank" rel="noopener">原文链接</a></p>
+<p>翻译贡献者</p>
+<h1 id="英文原文">英文原文</h1>
+<h1 id="permalinks">Permalinks</h1>
+<p>Permalinks are the output path for your pages, posts, or collections. They allow you to structure the directories of your source code different from the directories in your output.</p>
+<h2 id="front-matter"><a href="https://www.jekyll.com.cn/docs/permalinks/#front-matter" target="_blank" rel="noopener">Front Matter</a></h2>
+<p>The simplest way to set a permalink is using front matter. You set the <code>permalink</code> variable in front matter to the output path you’d like.</p>
+<p>For example, you might have a page on your site located at <code>/my_pages/about-me.html</code> and you want the output url to be <code>/about/</code>. In front matter of the page you would set:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">permalink: /about/</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="global"><a href="https://www.jekyll.com.cn/docs/permalinks/#global" target="_blank" rel="noopener">Global</a></h2>
+<p>Setting a permalink in front matter for every page on your site is no fun. Luckily, Jekyll lets you set the permalink structure globally in your <code>_config.yml</code>.</p>
+<p>To set a global permalink, you use the <code>permalink</code> variable in <code>_config.yml</code>. You can use placeholders to your desired output. For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: /:categories/:year/:month/:day/:title:output_ext</span><br></pre></td></tr></table></figure>
+<p>Note that pages and collections (excluding <code>posts</code> and <code>drafts</code>) don’t have time and categories (for pages, the above <code>:title</code> is equivalent to <code>:basename</code>), these aspects of the permalink style are ignored for the output.</p>
+<p>For example, a permalink style of <code>/:categories/:year/:month/:day/:title:output_ext</code> for the <code>posts</code> collection becomes <code>/:title.html</code> for pages and collections (excluding <code>posts</code> and <code>drafts</code>).</p>
+<h3 id="placeholders"><a href="https://www.jekyll.com.cn/docs/permalinks/#placeholders" target="_blank" rel="noopener">Placeholders</a></h3>
+<p>Here’s the full list of placeholders available:</p>
+<table>
+<thead>
+<tr>
+<th>VARIABLE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>year</code></td>
+<td>Year from the post’s filename with four digits. May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>short_year</code></td>
+<td>Year from the post’s filename without the century. (00…99) May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td>Month from the post’s filename. (01…12) May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>i_month</code></td>
+<td>Month without leading zeros from the post’s filename. May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>short_month</code></td>
+<td>Three-letter month abbreviation, e.g. “Jan”.</td>
+</tr>
+<tr>
+<td><code>long_month</code>4.0</td>
+<td>Full month name, e.g. “January”.</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td>Day of the month from the post’s filename. (01…31) May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>i_day</code></td>
+<td>Day of the month without leading zeros from the post’s filename. May be overridden via the document’s <code>date</code> front matter.</td>
+</tr>
+<tr>
+<td><code>y_day</code></td>
+<td>Ordinal day of the year from the post’s filename, with leading zeros. (001…366)</td>
+</tr>
+<tr>
+<td><code>w_year</code>4.0</td>
+<td>Week year which may differ from the month year for up to three days at the start of January and end of December</td>
+</tr>
+<tr>
+<td><code>week</code>4.0</td>
+<td>Week number of the current year, starting with the first week having a majority of its days in January. (01…53)</td>
+</tr>
+<tr>
+<td><code>w_day</code>4.0</td>
+<td>Day of the week, starting with Monday. (1…7)</td>
+</tr>
+<tr>
+<td><code>short_day</code>4.0</td>
+<td>Three-letter weekday abbreviation, e.g. “Sun”.</td>
+</tr>
+<tr>
+<td><code>long_day</code>4.0</td>
+<td>Weekday name, e.g. “Sunday”.</td>
+</tr>
+<tr>
+<td><code>hour</code></td>
+<td>Hour of the day, 24-hour clock, zero-padded from the post’s <code>date</code> front matter. (00…23)</td>
+</tr>
+<tr>
+<td><code>minute</code></td>
+<td>Minute of the hour from the post’s <code>date</code> front matter. (00…59)</td>
+</tr>
+<tr>
+<td><code>second</code></td>
+<td>Second of the minute from the post’s <code>date</code> front matter. (00…59)</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Title from the document’s filename. May be overridden via the document’s <code>slug</code> front matter.</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td>Slugified title from the document’s filename (any character except numbers and letters is replaced as hyphen). May be overridden via the document’s <code>slug</code> front matter.</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>The specified categories for this post. If a post has multiple categories, Jekyll will create a hierarchy (e.g. <code>/category1/category2</code>). Also Jekyll automatically parses out double slashes in the URLs, so if no categories are present, it will ignore this.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="built-in-formats"><a href="https://www.jekyll.com.cn/docs/permalinks/#built-in-formats" target="_blank" rel="noopener">Built-in formats</a></h3>
+<p>For posts, Jekyll also provides the following built-in styles for convenience:</p>
+<table>
+<thead>
+<tr>
+<th>PERMALINK STYLE</th>
+<th>URL TEMPLATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>/:categories/:year/:month/:day/:title:output_ext</code></td>
+</tr>
+<tr>
+<td><code>pretty</code></td>
+<td><code>/:categories/:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>ordinal</code></td>
+<td><code>/:categories/:year/:y_day/:title:output_ext</code></td>
+</tr>
+<tr>
+<td><code>weekdate</code>4.0</td>
+<td><code>/:categories/:year/W:week/:short_day/:title:output_ext</code></td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td><code>/:categories/:title:output_ext</code></td>
+</tr>
+</tbody>
+</table>
+<p>Rather than typing <code>permalink: /:categories/:year/:month/:day/:title/</code>, you can just type <code>permalink: pretty</code>.</p>
+<h4 id="specifying-permalinks-through-the-front-matter">Specifying permalinks through the front matter</h4>
+<p>Built-in permalink styles are not recognized in front matter. As a result, <code>permalink: pretty</code> will not work.</p>
+<h3 id="collections"><a href="https://www.jekyll.com.cn/docs/permalinks/#collections" target="_blank" rel="noopener">Collections</a></h3>
+<p>For collections (including <code>posts</code> and <code>drafts</code>), you have the option to override the global permalink in the collection configuration in <code>_config.yml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">collections:</span><br><span class="line">  my_collection:</span><br><span class="line">    output: true</span><br><span class="line">    permalink: /:collection/:name</span><br></pre></td></tr></table></figure>
+<p>Collections have the following placeholders available:</p>
+<table>
+<thead>
+<tr>
+<th>VARIABLE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:collection</code></td>
+<td>Label of the containing collection.</td>
+</tr>
+<tr>
+<td><code>:path</code></td>
+<td>Path to the document relative to the collection’s directory, including base filename of the document.</td>
+</tr>
+<tr>
+<td><code>:name</code></td>
+<td>The document’s base filename, with every sequence of spaces and non-alphanumeric characters replaced by a hyphen.</td>
+</tr>
+<tr>
+<td><code>:title</code></td>
+<td>The <code>:title</code> template variable will take the <code>slug</code> <a href="https://www.jekyll.com.cn/docs/front-matter/" target="_blank" rel="noopener">front matter</a> variable value if any is present in the document; if none is defined then <code>:title</code> will be equivalent to <code>:name</code>, aka the slug generated from the filename.</td>
+</tr>
+<tr>
+<td><code>:output_ext</code></td>
+<td>Extension of the output file. (Included by default and usually unnecessary.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pages"><a href="https://www.jekyll.com.cn/docs/permalinks/#pages" target="_blank" rel="noopener">Pages</a></h3>
+<p>For pages, you have to use front matter to override the global permalink, and if you set a permalink via front matter defaults in <code>_config.yml</code>, it will be ignored.</p>
+<p>Pages have the following placeholders available:</p>
+<table>
+<thead>
+<tr>
+<th>VARIABLE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:path</code></td>
+<td>Path to the page relative to the site’s source directory, excluding base filename of the page.</td>
+</tr>
+<tr>
+<td><code>:basename</code></td>
+<td>The page’s base filename</td>
+</tr>
+<tr>
+<td><code>:output_ext</code></td>
+<td>Extension of the output file. (Included by default and usually unnecessary.)</td>
+</tr>
+</tbody>
+</table>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/二级建造师/2020-04-24-二级建造师-建设工程施工管理笔记/" data-toggle="tooltip" data-placement="top" title="二级建造师-建设工程施工管理笔记">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/Markdown/2020-04-21-Markdownlint的设置知识/" data-toggle="tooltip" data-placement="top" title="Markdownlint的设置知识">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#Jekyll" title="Jekyll">Jekyll</a>
+                        
+                          <a class="tag" href="/tags/#Permalinks" title="Permalinks">Permalinks</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://blog.csdn.net/huwh_" target="_blank">CSDN Blog 安肆</a></li>
+                    
+                        <li><a href="http://dockone.io/people/安肆" target="_blank">DockOne 安肆</a></li>
+                    
+                        <li><a href="https://yq.aliyun.com/u/huweihuang" target="_blank">阿里云栖社区 安肆</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                            
+                                    
+
+                                            
+
+                                                    
+
+                                                            
+                                                                <li>
+                                                                    <a target="_blank" href="https://github.com/huweihuang">
+                                                                        <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                                                                    </a>
+                                                                </li>
+                                                                
+
+                                                                    
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy;
+                    安肆
+                        2020
+                            <br> Theme by <a href="http://beantech.org">BeanTech</a>
+                            <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> re-Ported by <a href="http://www.安肆.com">安肆</a> |
+                            <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/js/hux-blog.min.js"></script>
+
+
+            <!-- async load function -->
+            <script>
+                function async(u, c) {
+                    var d = document,
+                        t = 'script',
+                        o = d.createElement(t),
+                        s = d.getElementsByTagName(t)[0];
+                    o.src = u;
+                    if (c) {
+                        o.addEventListener('load', function(e) {
+                            c(null, e);
+                        }, false);
+                    }
+                    s.parentNode.insertBefore(o, s);
+                }
+            </script>
+
+            <!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+            <!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+            <!-- jquery.tagcloud.js -->
+            <script>
+                // only load tagcloud.js in tag.html
+                if ($('#tag_cloud').length !== 0) {
+                    async("https://little-happypig.github.io.git/js/jquery.tagcloud.js", function() {
+                        $.fn.tagcloud.defaults = {
+                            //size: {start: 1, end: 1, unit: 'em'},
+                            color: {
+                                start: '#bbbbee',
+                                end: '#0085a1'
+                            },
+                        };
+                        $('#tag_cloud a').tagcloud();
+                    })
+                }
+            </script>
+
+            <!--fastClick.js -->
+            <script>
+                async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function() {
+                    var $nav = document.querySelector("nav");
+                    if ($nav) FastClick.attach($nav);
+                })
+            </script>
+
+
+            <!-- Google Analytics -->
+
+            
+                <script>
+                    // dynamic User by Hux
+                    var _gaId = 'UA-XXXXXXXX-X';
+                    var _gaDomain = 'yoursite';
+
+                    // Originial
+                    (function(i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function() {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                    ga('create', _gaId, _gaDomain);
+                    ga('send', 'pageview');
+                </script>
+
+                
+
+
+                    <!-- Baidu Tongji -->
+                    
+                        <script>
+                            // dynamic User by Hux
+                            var _baId = 'xxx';
+
+                            // Originial
+                            var _hmt = _hmt || [];
+                            (function() {
+                                var hm = document.createElement("script");
+                                hm.src = "//hm.baidu.com/hm.js?" + _baId;
+                                var s = document.getElementsByTagName("script")[0];
+                                s.parentNode.insertBefore(hm, s);
+                            })();
+                        </script>
+                        
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="https://little-happypig.github.io.git/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
