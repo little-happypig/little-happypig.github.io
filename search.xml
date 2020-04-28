@@ -99,6 +99,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Markdownlint的设置知识</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
+<ul>
+<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多个项目用逗号分隔开。</p>
+
+    <div id="aplayer-JrnSWiwy" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Markdownlint</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
@@ -424,216 +446,6 @@
       </tags>
   </entry>
   <entry>
-    <title>思维导图测试</title>
-    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-
-    <div id="aplayer-TlAXpSfW" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
-    ></div>]]></content>
-      <categories>
-        <category>思维导图</category>
-      </categories>
-      <tags>
-        <tag>思维导图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdownlint的设置知识</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
-<ul>
-<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>多个项目用逗号分隔开。</p>
-
-    <div id="aplayer-dojPPRPG" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
-    ></div>]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Markdownlint</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdownlint规则详细介绍及自定义参数设置</title>
-    <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
-<p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
-<a id="more"></a>
-<ul>
-<li>MD001 - Heading levels should only increment by one level at a time<br>标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</li>
-</ul>
-<p>MD002 - First heading should be a top level heading<br>文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</p>
-<p>参数：<br>“level”：指定最高级标题的级数，默认是1</p>
-<ul>
-<li>MD003 - Heading style<br>整篇文档要采用一致的标题格式</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是”consistent”，也就是整篇文档一致</p>
-<p>标题格式必须统一，一般不能混用，但”setext_with_atx”, “setext_with_atx_closed”格式可以在”setext”格式二级标题后接着使用”atx”或”atx_closed”格式的标题</p>
-<ul>
-<li>MD004 - Unordered list style<br>整篇文档定义无序列表的格式要一致</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是”consistent”</p>
-<ul>
-<li><p>MD005 - Inconsistent indentation for list items at the same level<br>同一级的列表缩进必须一致<br>在有序列表中，前面的数字序号可以左对齐，也可以右对齐</p>
-</li>
-<li><p>MD006 - Consider starting bulleted lists at the beginning of the line<br>1级列表不能缩进</p>
-</li>
-<li><p>MD007 - Unordered list indentation<br>无序列表嵌套缩进时默认采用两个空格</p>
-</li>
-</ul>
-<p>参数：<br>“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
-<ul>
-<li>MD009 - Trailing spaces<br>行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</li>
-</ul>
-<p>参数：<br>“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>“list_item_empty_lines”：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
-<ul>
-<li>MD010 - Hard tabs<br>不能使用tab键缩进，要使用空格</li>
-</ul>
-<p>参数：<br>“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
-<ul>
-<li><p>MD011 - Reversed link syntax<br>检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</p>
-</li>
-<li><p>MD012 - Multiple consecutive blank lines<br>文档中不能有连续的空行，在代码块中此规则不会生效</p>
-</li>
-</ul>
-<p>参数：<br>“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
-<ul>
-<li>MD013 - Line length<br>默认行的最大长度是80，此规则对代码块、表格、标题也生效</li>
-</ul>
-<p>参数：<br>“line_length”：指定行的最大长度，默认是80<br>“heading_line_length”：指定标题行的最大长度，默认是80<br>“code_blocks”：指定规则是否(true or false)对代码块生效，默认true<br>“tables”：指定规则是否(true or false)对表格生效，默认true<br>“hesdings”：指定规则是否(true or false)对标题生效，默认true</p>
-<ul>
-<li>MD014 - Dollar signs used before commands without showing output<br>在代码块中，终端命令前不需要有美元符号($)<br>如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号($)，如：</li>
-</ul>
-<p>$ ls<br>foo bar<br>$ cat foo<br>hello world</p>
-<ul>
-<li><p>MD018 - No space after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间需用一个空格隔开</p>
-</li>
-<li><p>MD019 - Multiple spaces after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</p>
-</li>
-<li><p>MD020 - No space inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间需用一个空格隔开</p>
-</li>
-<li><p>MD021 - Multiple spaces inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</p>
-</li>
-<li><p>MD022 - Headings should be surrounded by blank lines<br>标题行的上下行必须都是空行</p>
-</li>
-</ul>
-<p>参数：<br>“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>“lines_below”：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
-<p>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</p>
-<ul>
-<li><p>MD023 - Headings must start at the beginning of the line<br>标题行不能缩进</p>
-</li>
-<li><p>MD024 - Multiple headings with the same content<br>文档不能有内容重复的标题</p>
-</li>
-</ul>
-<p>参数：<br>“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
-<ul>
-<li>MD025 - Multiple top level headings in the same document<br>同一文档只能有一个最高级的标题，默认是只能有一个1级标题</li>
-</ul>
-<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
-<ul>
-<li>MD026 - Trailing punctuation in heading<br>标题行末尾不能有以下标点符号：”.,;:!?”</li>
-</ul>
-<p>参数：<br>“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是”.,;:!?”</p>
-<p>此规则默认的是英文的标点符号，中文标点符号不在规则之内</p>
-<ul>
-<li><p>MD027 - Multiple spaces after blockquote symbol<br>创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</p>
-</li>
-<li><p>MD028 - Blank line inside blockquote<br>两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</p>
-</li>
-<li><p>MD029 - Ordered list item prefix<br>有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</p>
-</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定前缀序号的格式，(“one”,”ordered”,”one_or_ordered”,”zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是”one_or_ordered”</p>
-<p>本条规则支持在前缀序号中补0，以实现对齐，如：</p>
-<p>…<br>08.  one<br>09.  two<br>10.  three<br>…</p>
-<ul>
-<li>MD030 - Spaces after list markers<br>列表（有序、无序）的前缀符号和文字之间用1个空格隔开<br>在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</li>
-</ul>
-<p>参数：<br>“ul_single”,”ol_single”,”ul_multi”,”ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
-<ul>
-<li><p>MD031 - Fenced code blocks should be surrounded by blank lines<br>单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</p>
-</li>
-<li><p>MD032 - Lists should be surrounded by blank lines<br>列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>列表的缩进必须一致，否则会警告</p>
-</li>
-<li><p>MD033 - Inline HTML<br>文档中不允许使用HTML语句</p>
-</li>
-</ul>
-<p>参数：<br>“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
-<ul>
-<li><p>MD034 - Bare URL used<br>单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</p>
-</li>
-<li><p>MD035 - Horizontal rule style<br>创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</p>
-</li>
-</ul>
-<p>参数：<br>“style”：字符串，指定创建水平线的方式，值有：(“consistent”,”***”,”—“,”___”)，默认是”consistent”</p>
-<ul>
-<li>MD036 - Emphasis used instead of a heading<br>不能用强调代替标题</li>
-</ul>
-<p>参数：<br>“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是”.,;:!?”</p>
-<p>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</p>
-<ul>
-<li><p>MD037 - Spaces inside emphasis markers<br>用于创建强调的符号和强调的的文字之间不能有空格</p>
-</li>
-<li><p>MD038 - Spaces inside code span elements<br>当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格<br>如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</p>
-</li>
-<li><p>MD039 - Spaces inside link text<br>链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</p>
-</li>
-</ul>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="百 度">百 度</a></p>
-<ul>
-<li><p>MD040 - Fenced code blocks should have a language specified<br>单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</p>
-</li>
-<li><p>MD041 - First line in file should be a top level heading<br>文档的第一个非空行应该是文档最高级的标题，默认是1级标题</p>
-</li>
-</ul>
-<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
-<ul>
-<li><p>MD042 - No empty links<br>链接的地址不能为空</p>
-</li>
-<li><p>MD043 - Required heading structure<br>要求标题遵循一定的结构，默认是没有规定的结构(“null”)</p>
-</li>
-</ul>
-<p>参数：<br>“headings”：字符串数组，指定标题需要遵循的结构，默认是”null”，可以自行指定结构，如；</p>
-<p>[<br>    “# head”,<br>    “## item”,<br>    “### detail”,<br>    “*”<br>]<br>星号(*)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</p>
-<ul>
-<li>MD044 - Proper names should have the correct capitalization<br>指定一些名称，会检查它是否有正确的大写</li>
-</ul>
-<p>参数：<br>“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数”names”中，防止写错</p>
-<ul>
-<li><p>MD045 - Images should have alternate text (alt text)<br>图片链接必须包含描述文本（alt text）</p>
-</li>
-<li><p>MD046 - Code block style<br>整篇文档采用一致的代码格式</p>
-</li>
-</ul>
-<p>参数：<br>“style”: 字符串，指定代码块定义格式，有（”consistent”,”fenced”,”indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
-<ul>
-<li><p>MD047 - Files should end with a single newline character<br>文档需用一个空行结尾</p>
-</li>
-<li><p>MD048 - Code fence style<br>Tags: code</p>
-</li>
-</ul>
-<p>Aliases: code-fence-style</p>
-<p>Parameters: style (“consistent”, “tilde”, “backtick”; default “consistent”)</p>
-<p>This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style:</p>
-<p>The configured list style can be a specific symbol to use (backtick, tilde), or can require that usage be consistent within the document.</p>
-<p>Rationale: Consistent formatting makes it easier to understand a document.</p>
-]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Markdownlint</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VS Code中配置Github</title>
     <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>配置步骤：</p>
@@ -658,81 +470,6 @@
       <tags>
         <tag>VS Code</tag>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
-    <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
-<ul>
-<li><p>git config –global credential.helper store</p>
-<p>命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。</p>
-</li>
-</ul>
-<p>再重启vscode，进行git操作，vscode就不再让我们输入用户名和密码啦！</p>
-]]></content>
-      <categories>
-        <category>VS Code</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二级建造师-建设工程施工管理笔记</title>
-    <url>/2020/04/24/2020-04-24-%E4%BA%8C%E7%BA%A7%E5%BB%BA%E9%80%A0%E5%B8%88-%E5%BB%BA%E8%AE%BE%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="建设工程施工管理"><a href="#建设工程施工管理" class="headerlink" title="建设工程施工管理"></a>建设工程施工管理</h1><hr>
-<h1 id="1-2Z101011"><a href="#1-2Z101011" class="headerlink" title="1. 2Z101011"></a>1. 2Z101011</h1><p>（1）建设工程管理的<strong>核心要素：费用、进度、质量</strong></p>
-<p>（2）注意区分：<strong>费用</strong>对于各方追求的目标(不同的叫法)</p>
-<p><strong>业主方：投资目标</strong>   </p>
-<p><strong>施工方：成本目标</strong>。<u><strong>这个是贯彻正本教程始终的管理目标原则</strong></u></p>
-<p>（3）<strong>业主方</strong>是建设工程项目生产过程的<strong>总集成者</strong>，是建设工程生产过程的<strong>总组织者</strong>，业主方的项目管理是<strong>管理的核心</strong></p>
-<h2 id="业主方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#业主方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="业主方项目管理的目标和任务 其管理工作涉及实施阶段的全过程"></a>业主方项目管理的目标和任务 <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u></h2><p>注意<strong>费用、进度、质量</strong>也是其管理的目标，<strong>三控</strong>（<code>安全、合同、信息</code>）<strong>三管</strong>（<code>投资、进度、质量</code>）<strong>一协调</strong>（<code>组织和协调</code>）</p>
-<ul>
-<li><p>项目的质量目标不仅涉及施工的质量，还包括设计质量、材料质量、设备质量和影响项目运行或运营的环境质量。</p>
-</li>
-<li><p>建设工程项目的<strong><u>全寿命周期</u></strong>包括：<code>决策阶段、实施阶段和使用阶段</code></p>
-</li>
-<li><p>业主方的项目管理工作涉及项目实施的全过程 </p>
-</li>
-<li><p>项目的实施阶段包括：<code>设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</code></p>
-<img src="D:\SystemFiles\Documents\二级建造师\images\2z101000\建筑工程项目的决策阶段和实施阶段.png"  style="width:800px" style="height:200px"/> 
-</li>
-<li><p><code>安全管理是项目管理中最重要的任务</code></p>
-</li>
-</ul>
-<h2 id="设计方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#设计方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="设计方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>设计方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
-<li><p>设计的<code>成本（区别于业主方的投资目标、都是资金，叫法不同而已）</code>目标、设计的<code>进度</code>目标和设计的<code>质量</code>目标</p>
-</li>
-<li><p>注意其<code>三管三控一协调</code>与<strong>业主方</strong>和后节的<strong>供货方</strong>、<strong>建设项目工程总承包方</strong>的项目管理目标任务的区别</p>
-</li>
-</ul>
-<ul>
-<li>设计方项目管理的任务包括:<br>(1)与设计工作有关的安全管理<br>(2)<code>设计成本控制和与设计工作有关的工程造价控制</code>  <code>注意这一项与业主方的区别</code><br>(3)设计进度控制<br>(4)设计质量控制<br>(5)设计合同管理<br>(6)设计信息管理<br>(7)与设计工作有关的组织和协调。</li>
-</ul>
-<h2 id="供货方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#供货方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="供货方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>供货方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
-<li>供货方项目管理的主要任务包括:<br>(1)供货的安全管理;<br>(2)供货方的<code>成本</code>控制;<br>(3)供货的进度控制;<br>(4)供货的质量控制;<br>(5)供货的合同管理;<br>(6)供货的信息管理;<br>(7)与供货有关的组织与协调。</li>
-</ul>
-<h2 id="建设项目工程总承包方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#建设项目工程总承包方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="建设项目工程总承包方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>建设项目工程总承包方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
-<li><p><strong><u>涉及项目实施阶段的全过程,即设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</u></strong></p>
-</li>
-<li><p>参考《建设项目工程总承包管理规范》GB/50358-2017的规定,建设项目工程总承包方的管理工作涉及：<br>(1)项目设计管理<br>(2)项目采购管理<br>(3)项目施工管理<br>(4)项目试运行管理和项目收尾等。</p>
-</li>
-<li><p>其中属于项目总承包方项目管理的任务包括：<br>(1)项目风险管理<br>(2)项目进度管理<br>(3)项目质量管理<br>(4)项目费用管理<br>(5)项目安全、职业健康与环境管理<br>(6)项目资源管理<br>(7)项目沟通与信息管理<br>(8)项目合同管理等。</p>
-</li>
-<li><p>注意区别：  <strong>施工总承包</strong> 涉及<code>施工</code>阶段</p>
-</li>
-</ul>
-<p>​                                   <strong>工程总承包</strong>不但有<code>施工</code>还包含有<code>设计</code></p>
-<hr>
-<h1 id="2-2Z101011"><a href="#2-2Z101011" class="headerlink" title="2. 2Z101011"></a>2. 2Z101011</h1>]]></content>
-      <categories>
-        <category>二级建造师</category>
-      </categories>
-      <tags>
-        <tag>建设工程施工管理</tag>
-        <tag>二级建造师</tag>
       </tags>
   </entry>
   <entry>
@@ -978,6 +715,213 @@
       </tags>
   </entry>
   <entry>
+    <title>思维导图测试</title>
+    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+
+    <div id="aplayer-rkJhgtMz" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>思维导图</category>
+      </categories>
+      <tags>
+        <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdownlint规则详细介绍及自定义参数设置</title>
+    <url>/2020/04/21/2020-04-21-Markdownlint%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint规则详细介绍及自定义参数设置"><a href="#Markdownlint规则详细介绍及自定义参数设置" class="headerlink" title="Markdownlint规则详细介绍及自定义参数设置"></a>Markdownlint规则详细介绍及自定义参数设置</h1><p>markdownlint是vscode上一款非常好用的 Markdown 格式检查扩展工具，它规定了许多规则并实时对文档进行检查，防止一些语法错误，同时维持文档风格的统一，使用此工具有助于形成一个良好的写作习惯和规范。但因其规则较多，写文档时很容易就出错（或不符合规则），所以需要对工具的规则有一个详细的了解，另外，有时工作要求的文档风格与markdownlint工具规定的规则并不相同，比如标题、列表的创建格式，缩进的空格数等等，这时就需要对规则进行一定的设置。</p>
+<p>本文主要参考markdownlint的rules文档，对每一个规则都进行了说明，指明了一些规则中可以设置的参数，便于用户设置相应的规则。</p>
+<a id="more"></a>
+<ul>
+<li>MD001 - Heading levels should only increment by one level at a time<br>标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</li>
+</ul>
+<p>MD002 - First heading should be a top level heading<br>文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</p>
+<p>参数：<br>“level”：指定最高级标题的级数，默认是1</p>
+<ul>
+<li>MD003 - Heading style<br>整篇文档要采用一致的标题格式</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是”consistent”，也就是整篇文档一致</p>
+<p>标题格式必须统一，一般不能混用，但”setext_with_atx”, “setext_with_atx_closed”格式可以在”setext”格式二级标题后接着使用”atx”或”atx_closed”格式的标题</p>
+<ul>
+<li>MD004 - Unordered list style<br>整篇文档定义无序列表的格式要一致</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是”consistent”</p>
+<ul>
+<li><p>MD005 - Inconsistent indentation for list items at the same level<br>同一级的列表缩进必须一致<br>在有序列表中，前面的数字序号可以左对齐，也可以右对齐</p>
+</li>
+<li><p>MD006 - Consider starting bulleted lists at the beginning of the line<br>1级列表不能缩进</p>
+</li>
+<li><p>MD007 - Unordered list indentation<br>无序列表嵌套缩进时默认采用两个空格</p>
+</li>
+</ul>
+<p>参数：<br>“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
+<ul>
+<li>MD009 - Trailing spaces<br>行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</li>
+</ul>
+<p>参数：<br>“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>“list_item_empty_lines”：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
+<ul>
+<li>MD010 - Hard tabs<br>不能使用tab键缩进，要使用空格</li>
+</ul>
+<p>参数：<br>“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
+<ul>
+<li><p>MD011 - Reversed link syntax<br>检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</p>
+</li>
+<li><p>MD012 - Multiple consecutive blank lines<br>文档中不能有连续的空行，在代码块中此规则不会生效</p>
+</li>
+</ul>
+<p>参数：<br>“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
+<ul>
+<li>MD013 - Line length<br>默认行的最大长度是80，此规则对代码块、表格、标题也生效</li>
+</ul>
+<p>参数：<br>“line_length”：指定行的最大长度，默认是80<br>“heading_line_length”：指定标题行的最大长度，默认是80<br>“code_blocks”：指定规则是否(true or false)对代码块生效，默认true<br>“tables”：指定规则是否(true or false)对表格生效，默认true<br>“hesdings”：指定规则是否(true or false)对标题生效，默认true</p>
+<ul>
+<li>MD014 - Dollar signs used before commands without showing output<br>在代码块中，终端命令前不需要有美元符号($)<br>如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号($)，如：</li>
+</ul>
+<p>$ ls<br>foo bar<br>$ cat foo<br>hello world</p>
+<ul>
+<li><p>MD018 - No space after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间需用一个空格隔开</p>
+</li>
+<li><p>MD019 - Multiple spaces after hash on atx style heading<br>在”atx”格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li><p>MD020 - No space inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间需用一个空格隔开</p>
+</li>
+<li><p>MD021 - Multiple spaces inside hashes on closed atx style heading<br>在”closed_atx”格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</p>
+</li>
+<li><p>MD022 - Headings should be surrounded by blank lines<br>标题行的上下行必须都是空行</p>
+</li>
+</ul>
+<p>参数：<br>“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>“lines_below”：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
+<p>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</p>
+<ul>
+<li><p>MD023 - Headings must start at the beginning of the line<br>标题行不能缩进</p>
+</li>
+<li><p>MD024 - Multiple headings with the same content<br>文档不能有内容重复的标题</p>
+</li>
+</ul>
+<p>参数：<br>“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
+<ul>
+<li>MD025 - Multiple top level headings in the same document<br>同一文档只能有一个最高级的标题，默认是只能有一个1级标题</li>
+</ul>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+<ul>
+<li>MD026 - Trailing punctuation in heading<br>标题行末尾不能有以下标点符号：”.,;:!?”</li>
+</ul>
+<p>参数：<br>“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是”.,;:!?”</p>
+<p>此规则默认的是英文的标点符号，中文标点符号不在规则之内</p>
+<ul>
+<li><p>MD027 - Multiple spaces after blockquote symbol<br>创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</p>
+</li>
+<li><p>MD028 - Blank line inside blockquote<br>两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</p>
+</li>
+<li><p>MD029 - Ordered list item prefix<br>有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</p>
+</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定前缀序号的格式，(“one”,”ordered”,”one_or_ordered”,”zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是”one_or_ordered”</p>
+<p>本条规则支持在前缀序号中补0，以实现对齐，如：</p>
+<p>…<br>08.  one<br>09.  two<br>10.  three<br>…</p>
+<ul>
+<li>MD030 - Spaces after list markers<br>列表（有序、无序）的前缀符号和文字之间用1个空格隔开<br>在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</li>
+</ul>
+<p>参数：<br>“ul_single”,”ol_single”,”ul_multi”,”ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
+<ul>
+<li><p>MD031 - Fenced code blocks should be surrounded by blank lines<br>单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</p>
+</li>
+<li><p>MD032 - Lists should be surrounded by blank lines<br>列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>列表的缩进必须一致，否则会警告</p>
+</li>
+<li><p>MD033 - Inline HTML<br>文档中不允许使用HTML语句</p>
+</li>
+</ul>
+<p>参数：<br>“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
+<ul>
+<li><p>MD034 - Bare URL used<br>单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</p>
+</li>
+<li><p>MD035 - Horizontal rule style<br>创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</p>
+</li>
+</ul>
+<p>参数：<br>“style”：字符串，指定创建水平线的方式，值有：(“consistent”,”***”,”—“,”___”)，默认是”consistent”</p>
+<ul>
+<li>MD036 - Emphasis used instead of a heading<br>不能用强调代替标题</li>
+</ul>
+<p>参数：<br>“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是”.,;:!?”</p>
+<p>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</p>
+<ul>
+<li><p>MD037 - Spaces inside emphasis markers<br>用于创建强调的符号和强调的的文字之间不能有空格</p>
+</li>
+<li><p>MD038 - Spaces inside code span elements<br>当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格<br>如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</p>
+</li>
+<li><p>MD039 - Spaces inside link text<br>链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</p>
+</li>
+</ul>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="百 度">百 度</a></p>
+<ul>
+<li><p>MD040 - Fenced code blocks should have a language specified<br>单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</p>
+</li>
+<li><p>MD041 - First line in file should be a top level heading<br>文档的第一个非空行应该是文档最高级的标题，默认是1级标题</p>
+</li>
+</ul>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+<ul>
+<li><p>MD042 - No empty links<br>链接的地址不能为空</p>
+</li>
+<li><p>MD043 - Required heading structure<br>要求标题遵循一定的结构，默认是没有规定的结构(“null”)</p>
+</li>
+</ul>
+<p>参数：<br>“headings”：字符串数组，指定标题需要遵循的结构，默认是”null”，可以自行指定结构，如；</p>
+<p>[<br>    “# head”,<br>    “## item”,<br>    “### detail”,<br>    “*”<br>]<br>星号(*)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</p>
+<ul>
+<li>MD044 - Proper names should have the correct capitalization<br>指定一些名称，会检查它是否有正确的大写</li>
+</ul>
+<p>参数：<br>“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数”names”中，防止写错</p>
+<ul>
+<li><p>MD045 - Images should have alternate text (alt text)<br>图片链接必须包含描述文本（alt text）</p>
+</li>
+<li><p>MD046 - Code block style<br>整篇文档采用一致的代码格式</p>
+</li>
+</ul>
+<p>参数：<br>“style”: 字符串，指定代码块定义格式，有（”consistent”,”fenced”,”indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
+<ul>
+<li><p>MD047 - Files should end with a single newline character<br>文档需用一个空行结尾</p>
+</li>
+<li><p>MD048 - Code fence style<br>Tags: code</p>
+</li>
+</ul>
+<p>Aliases: code-fence-style</p>
+<p>Parameters: style (“consistent”, “tilde”, “backtick”; default “consistent”)</p>
+<p>This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style:</p>
+<p>The configured list style can be a specific symbol to use (backtick, tilde), or can require that usage be consistent within the document.</p>
+<p>Rationale: Consistent formatting makes it easier to understand a document.</p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Markdownlint</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
+    <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
+<ul>
+<li><p>git config –global credential.helper store</p>
+<p>命令行随后会提示输入用户名和密码，输入密码是不会有任何显示状态变化，输完直接回车就好。</p>
+</li>
+</ul>
+<p>再重启vscode，进行git操作，vscode就不再让我们输入用户名和密码啦！</p>
+]]></content>
+      <categories>
+        <category>VS Code</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo中如何设置“阅读全文”</title>
     <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
@@ -1012,6 +956,62 @@
         <tag>Hexo</tag>
         <tag>设置</tag>
         <tag>阅读全文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二级建造师-建设工程施工管理笔记</title>
+    <url>/2020/04/24/2020-04-24-%E4%BA%8C%E7%BA%A7%E5%BB%BA%E9%80%A0%E5%B8%88-%E5%BB%BA%E8%AE%BE%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%AE%A1%E7%90%86%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="建设工程施工管理"><a href="#建设工程施工管理" class="headerlink" title="建设工程施工管理"></a>建设工程施工管理</h1><hr>
+<h1 id="1-2Z101011"><a href="#1-2Z101011" class="headerlink" title="1. 2Z101011"></a>1. 2Z101011</h1><p>（1）建设工程管理的<strong>核心要素：费用、进度、质量</strong></p>
+<p>（2）注意区分：<strong>费用</strong>对于各方追求的目标(不同的叫法)</p>
+<p><strong>业主方：投资目标</strong>   </p>
+<p><strong>施工方：成本目标</strong>。<u><strong>这个是贯彻正本教程始终的管理目标原则</strong></u></p>
+<p>（3）<strong>业主方</strong>是建设工程项目生产过程的<strong>总集成者</strong>，是建设工程生产过程的<strong>总组织者</strong>，业主方的项目管理是<strong>管理的核心</strong></p>
+<h2 id="业主方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#业主方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="业主方项目管理的目标和任务 其管理工作涉及实施阶段的全过程"></a>业主方项目管理的目标和任务 <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u></h2><p>注意<strong>费用、进度、质量</strong>也是其管理的目标，<strong>三控</strong>（<code>安全、合同、信息</code>）<strong>三管</strong>（<code>投资、进度、质量</code>）<strong>一协调</strong>（<code>组织和协调</code>）</p>
+<ul>
+<li><p>项目的质量目标不仅涉及施工的质量，还包括设计质量、材料质量、设备质量和影响项目运行或运营的环境质量。</p>
+</li>
+<li><p>建设工程项目的<strong><u>全寿命周期</u></strong>包括：<code>决策阶段、实施阶段和使用阶段</code></p>
+</li>
+<li><p>业主方的项目管理工作涉及项目实施的全过程 </p>
+</li>
+<li><p>项目的实施阶段包括：<code>设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</code></p>
+<img src="D:\SystemFiles\Documents\二级建造师\images\2z101000\建筑工程项目的决策阶段和实施阶段.png"  style="width:800px" style="height:200px"/> 
+</li>
+<li><p><code>安全管理是项目管理中最重要的任务</code></p>
+</li>
+</ul>
+<h2 id="设计方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#设计方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="设计方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>设计方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
+<li><p>设计的<code>成本（区别于业主方的投资目标、都是资金，叫法不同而已）</code>目标、设计的<code>进度</code>目标和设计的<code>质量</code>目标</p>
+</li>
+<li><p>注意其<code>三管三控一协调</code>与<strong>业主方</strong>和后节的<strong>供货方</strong>、<strong>建设项目工程总承包方</strong>的项目管理目标任务的区别</p>
+</li>
+</ul>
+<ul>
+<li>设计方项目管理的任务包括:<br>(1)与设计工作有关的安全管理<br>(2)<code>设计成本控制和与设计工作有关的工程造价控制</code>  <code>注意这一项与业主方的区别</code><br>(3)设计进度控制<br>(4)设计质量控制<br>(5)设计合同管理<br>(6)设计信息管理<br>(7)与设计工作有关的组织和协调。</li>
+</ul>
+<h2 id="供货方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#供货方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="供货方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>供货方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
+<li>供货方项目管理的主要任务包括:<br>(1)供货的安全管理;<br>(2)供货方的<code>成本</code>控制;<br>(3)供货的进度控制;<br>(4)供货的质量控制;<br>(5)供货的合同管理;<br>(6)供货的信息管理;<br>(7)与供货有关的组织与协调。</li>
+</ul>
+<h2 id="建设项目工程总承包方项目管理的目标和任务-其管理工作涉及实施阶段的全过程"><a href="#建设项目工程总承包方项目管理的目标和任务-其管理工作涉及实施阶段的全过程" class="headerlink" title="建设项目工程总承包方项目管理的目标和任务( 其管理工作涉及实施阶段的全过程)"></a>建设项目工程总承包方项目管理的目标和任务( <u><strong><code>其管理工作涉及实施阶段的全过程</code></strong></u>)</h2><ul>
+<li><p><strong><u>涉及项目实施阶段的全过程,即设计前的准备阶段、设计阶段、施工阶段、动用前准备阶段和保修期</u></strong></p>
+</li>
+<li><p>参考《建设项目工程总承包管理规范》GB/50358-2017的规定,建设项目工程总承包方的管理工作涉及：<br>(1)项目设计管理<br>(2)项目采购管理<br>(3)项目施工管理<br>(4)项目试运行管理和项目收尾等。</p>
+</li>
+<li><p>其中属于项目总承包方项目管理的任务包括：<br>(1)项目风险管理<br>(2)项目进度管理<br>(3)项目质量管理<br>(4)项目费用管理<br>(5)项目安全、职业健康与环境管理<br>(6)项目资源管理<br>(7)项目沟通与信息管理<br>(8)项目合同管理等。</p>
+</li>
+<li><p>注意区别：  <strong>施工总承包</strong> 涉及<code>施工</code>阶段</p>
+</li>
+</ul>
+<p>​                                   <strong>工程总承包</strong>不但有<code>施工</code>还包含有<code>设计</code></p>
+<hr>
+<h1 id="2-2Z101011"><a href="#2-2Z101011" class="headerlink" title="2. 2Z101011"></a>2. 2Z101011</h1>]]></content>
+      <categories>
+        <category>二级建造师</category>
+      </categories>
+      <tags>
+        <tag>建设工程施工管理</tag>
+        <tag>二级建造师</tag>
       </tags>
   </entry>
   <entry>
