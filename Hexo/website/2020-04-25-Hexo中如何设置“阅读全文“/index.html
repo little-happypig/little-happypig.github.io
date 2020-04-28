@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Markdownlint的设置知识 - 安肆 | Blog
+          Hexo中如何设置“阅读全文” - 安肆 | Blog
         
     </title>
 
-    <link rel="canonical" href="https://little-happypig.github.io.git/Markdown/2020-04-21-Markdownlint的设置知识/">
+    <link rel="canonical" href="https://little-happypig.github.io.git/Hexo/website/2020-04-25-Hexo中如何设置“阅读全文“/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,16 +88,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Markdown" title="Markdown">Markdown</a>
+                              <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                             
-                              <a class="tag" href="/tags/#Markdownlint" title="Markdownlint">Markdownlint</a>
+                              <a class="tag" href="/tags/#设置" title="设置">设置</a>
+                            
+                              <a class="tag" href="/tags/#阅读全文" title="阅读全文">阅读全文</a>
                             
                         </div>
-                        <h1>Markdownlint的设置知识</h1>
+                        <h1>Hexo中如何设置“阅读全文”</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 安肆 on
-                            2020-04-21
+                            2020-04-25
                         </span>
                     </div>
                 
@@ -144,6 +146,13 @@
 
                         
                         <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -152,13 +161,6 @@
                         
                         <li>
                             <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -214,13 +216,36 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="markdownlint的设置知识">Markdownlint的设置知识</h1>
-<p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
-<ul>
-<li>修改示例，例如你要关闭“MD025”和“MD040”提示，作如下修改：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;editor.suggestSelection&quot;: &quot;first&quot;,</span><br><span class="line">    &quot;vsintellicode.modify.editor.suggestSelection&quot;: &quot;automaticallyOverrodeDefaultValue&quot;,</span><br><span class="line">    &quot;git.autofetch&quot;: true,</span><br><span class="line">    &quot;markdownlint.config&quot;: &#123;</span><br><span class="line"></span><br><span class="line">            &quot;MD025&quot;: false,  </span><br><span class="line">            &quot;MD040&quot;: false</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;git.enableSmartCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>多个项目用逗号分隔开。</p>
+                <p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/" target="_blank" rel="noopener">我的小窝</a></p>
+<ol>
+<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>
+这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
+</ol>
+<a id="more"></a>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
+<ol start="2">
+<li>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>
+这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
+<ol start="3">
+<li>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>
+默认截取的长度为 150 字符，可以根据需要自行设定</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+<p>特别注意的是在Next的高版本上<br>
+next 7.6版文档本关于设置阅读全文，首先要下载插件 然后在主题配置文件_config.yml配置下就好了。</p>
+<p>一，在博客目录下执行</p>
+<p>npm install hexo-excerpt --save</p>
+<p>二，在站点配置文件_config.yml添加</p>
+<p>excerpt:<br>
+depth: 10<br>
+excerpt_excludes: []<br>
+more_excludes: []<br>
+hideWholePostExcerpts: true</p>
+<p>next7.6最新文档添加链接描述</p>
+<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
 
                 
 
@@ -229,12 +254,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/Jekyll/2020-04-21-Jekyll中关于永久链接(Permalinks)的设置规则/" data-toggle="tooltip" data-placement="top" title="Jekyll中关于永久链接(Permalinks)的设置规则">&larr; Previous Post</a>
+                            <a href="/Hexo/website/2020-04-25-更改hexo next主题的fontawesome版本至最新/" data-toggle="tooltip" data-placement="top" title="更改Hexo Next主题的fontawesome版本至最新">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/VS-Code/2020-04-21-解决使用Vs code上传github需要输入密码和用户名解/" data-toggle="tooltip" data-placement="top" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题">Next Post &rarr;</a>
+                            <a href="/个人博客/website/2020-04-24-免费个人博客搭建详解/" data-toggle="tooltip" data-placement="top" title="免费个人博客搭建详解（转载）">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -292,9 +317,11 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Markdown" title="Markdown">Markdown</a>
+                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
                         
-                          <a class="tag" href="/tags/#Markdownlint" title="Markdownlint">Markdownlint</a>
+                          <a class="tag" href="/tags/#设置" title="设置">设置</a>
+                        
+                          <a class="tag" href="/tags/#阅读全文" title="阅读全文">阅读全文</a>
                         
                     </div>
                 </section>

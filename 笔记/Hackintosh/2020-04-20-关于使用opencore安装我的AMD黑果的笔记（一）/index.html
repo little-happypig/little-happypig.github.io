@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          Hexo中如何设置“阅读全文” - 安肆 | Blog
+          关于使用opencore安装我的AMD黑果的笔记（一） - 安肆 | Blog
         
     </title>
 
-    <link rel="canonical" href="https://little-happypig.github.io.git/Hexo/2020-04-25-Hexo中如何设置“阅读全文“/">
+    <link rel="canonical" href="https://little-happypig.github.io.git/笔记/Hackintosh/2020-04-20-关于使用opencore安装我的AMD黑果的笔记（一）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -88,18 +88,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                              <a class="tag" href="/tags/#VS Code" title="VS Code">VS Code</a>
                             
-                              <a class="tag" href="/tags/#设置" title="设置">设置</a>
+                              <a class="tag" href="/tags/#建设工程施工管理" title="建设工程施工管理">建设工程施工管理</a>
                             
-                              <a class="tag" href="/tags/#阅读全文" title="阅读全文">阅读全文</a>
+                              <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                             
                         </div>
-                        <h1>Hexo中如何设置“阅读全文”</h1>
+                        <h1>关于使用opencore安装我的AMD黑果的笔记（一）</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by 安肆 on
-                            2020-04-25
+                            2020-04-20
                         </span>
                     </div>
                 
@@ -146,6 +146,13 @@
 
                         
                         <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -154,13 +161,6 @@
                         
                         <li>
                             <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -216,36 +216,93 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/" target="_blank" rel="noopener">我的小窝</a></p>
+                <ul>
+<li>参考文章</li>
+</ul>
 <ol>
-<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>
-这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
+<li><a href="https://blog.xjn819.com/" target="_blank" rel="noopener">xjn’s 的博客</a></li>
+<li><a href="https://blog.daliansky.net/" target="_blank" rel="noopener">黑果小兵的博客</a></li>
+<li><a href="https://www.youtube.com/watch?v=QtvDRDqgolc&amp;t=275s" target="_blank" rel="noopener">youtube的视频</a></li>
+</ol>
+<ul>
+<li>相关下载文件</li>
+</ul>
+<ol>
+<li><a href="https://mega.nz/#!8ox3SYAJ!RYPlgtSDiT6pBWlrLw6vCle_zh_9DAwIj9yrxKUWZGY" target="_blank" rel="noopener">安装工具链接</a></li>
+<li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python下载</a></li>
 </ol>
 <a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
-<ol start="2">
-<li>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>
-这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</li>
+<h2 id="待解决的问题">待解决的问题</h2>
+<ol>
+<li>R9 290X显卡双屏的问题</li>
+<li>启动图形化菜单</li>
+<li>休眠</li>
+<li>Indesign的启动问题</li>
 </ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
-<ol start="3">
-<li>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>
-默认截取的长度为 150 字符，可以根据需要自行设定</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-<p>特别注意的是在Next的高版本上<br>
-next 7.6版文档本关于设置阅读全文，首先要下载插件 然后在主题配置文件_config.yml配置下就好了。</p>
-<p>一，在博客目录下执行</p>
-<p>npm install hexo-excerpt --save</p>
-<p>二，在站点配置文件_config.yml添加</p>
-<p>excerpt:<br>
-depth: 10<br>
-excerpt_excludes: []<br>
-more_excludes: []<br>
-hideWholePostExcerpts: true</p>
-<p>next7.6最新文档添加链接描述</p>
-<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
+<h2 id="00-bios设置">0.0 BIOS设置</h2>
+<p>直接抄袭@黑果小兵了~嘻嘻嘻</p>
+<p>禁用如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">英文</th>
+<th style="text-align:left">中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Fast Boot</td>
+<td style="text-align:left">快速启动</td>
+</tr>
+<tr>
+<td style="text-align:left">CFG Lock (MSR 0xE2 write protection)</td>
+<td style="text-align:left">CFG 锁 (MSR 0xE2 写入保护)</td>
+</tr>
+<tr>
+<td style="text-align:left">VT-d</td>
+<td style="text-align:left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-d</a></td>
+</tr>
+<tr>
+<td style="text-align:left">CSM</td>
+<td style="text-align:left">兼容性支持模块</td>
+</tr>
+</tbody>
+</table>
+<p>启用如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">英文</th>
+<th style="text-align:left">中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">VT-x</td>
+<td style="text-align:left"><a href="https://zhidao.baidu.com/question/495526512.html" target="_blank" rel="noopener">VT-x</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Above 4G decoding</td>
+<td style="text-align:left">大于 4G 地址空间解码</td>
+</tr>
+<tr>
+<td style="text-align:left">Hyper Threading</td>
+<td style="text-align:left">处理器超线程</td>
+</tr>
+<tr>
+<td style="text-align:left">Execute Disable Bit</td>
+<td style="text-align:left">执行禁止位</td>
+</tr>
+<tr>
+<td style="text-align:left">EHCI/XHCI Hand-off</td>
+<td style="text-align:left">接手 EHCI/XHCI 控制</td>
+</tr>
+<tr>
+<td style="text-align:left">OS type: other types</td>
+<td style="text-align:left">操作系统类型: 其他</td>
+</tr>
+</tbody>
+</table>
 
                 
 
@@ -254,12 +311,12 @@ hideWholePostExcerpts: true</p>
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/Hexo/2020-04-25-更改hexo next主题的fontawesome版本至最新/" data-toggle="tooltip" data-placement="top" title="更改Hexo Next主题的fontawesome版本至最新">&larr; Previous Post</a>
+                            <a href="/VS-Code/programming/2020-04-21-VS Code中配置GitHub/" data-toggle="tooltip" data-placement="top" title="VS Code中配置Github">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/个人博客/2020-04-24-免费个人博客搭建详解/" data-toggle="tooltip" data-placement="top" title="免费个人博客搭建详解（转载）">Next Post &rarr;</a>
+                            <a href="/article/website/hexo-theme-huweihuang/" data-toggle="tooltip" data-placement="top" title="[Hexo] Theme HuWeihuang">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -317,11 +374,11 @@ hideWholePostExcerpts: true</p>
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
+                          <a class="tag" href="/tags/#VS Code" title="VS Code">VS Code</a>
                         
-                          <a class="tag" href="/tags/#设置" title="设置">设置</a>
+                          <a class="tag" href="/tags/#建设工程施工管理" title="建设工程施工管理">建设工程施工管理</a>
                         
-                          <a class="tag" href="/tags/#阅读全文" title="阅读全文">阅读全文</a>
+                          <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
                         
                     </div>
                 </section>
