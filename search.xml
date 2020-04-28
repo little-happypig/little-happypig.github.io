@@ -99,33 +99,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VS Code中配置Github</title>
-    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>配置步骤：</p>
-<h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
-<p>确认后显示ssh地址  </p>
-<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
-<p>执行这个命令（在git bash中）</p>
-<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
-<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
-<p>步骤：</p>
-<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
-]]></content>
-      <categories>
-        <category>VS Code</category>
-      </categories>
-      <tags>
-        <tag>VS Code</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jekyll中关于永久链接(Permalinks)的设置规则</title>
     <url>/2020/04/21/2020-04-21-Jekyll%E4%B8%AD%E5%85%B3%E4%BA%8E%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5(Permalinks)%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="永久链接-Permalinks"><a href="#永久链接-Permalinks" class="headerlink" title="永久链接(Permalinks)"></a>永久链接(Permalinks)</h1><p>Jekyll 支持以灵活的方式管理你网站的链接，你可以通过 <a href="http://jekyllcn.com/docs/configuration/" target="_blank" rel="noopener">Configuration</a> 或 <a href="http://jekyllcn.com/docs/frontmatter/" target="_blank" rel="noopener">YAML 头信息</a> 为每篇文章设置永久链接。你可以随心所欲地选择内建链接格式，或者自定义链接格式。</p>
@@ -451,6 +424,21 @@
       </tags>
   </entry>
   <entry>
+    <title>思维导图测试</title>
+    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
+
+    <div id="aplayer-TlAXpSfW" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
+    ></div>]]></content>
+      <categories>
+        <category>思维导图</category>
+      </categories>
+      <tags>
+        <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdownlint的设置知识</title>
     <url>/2020/04/21/2020-04-21-Markdownlint%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Markdownlint的设置知识"><a href="#Markdownlint的设置知识" class="headerlink" title="Markdownlint的设置知识"></a>Markdownlint的设置知识</h1><p>VS Code的插件Markdownlint经常会提示一些你觉得不用修改的错误问题，比如每个文档不该有多个最高级标签（MD025）,这时候打开插件栏，右键点Markdownlint,选设置菜单，然后点击在Setting.json中编辑</p>
@@ -461,7 +449,7 @@
 
 <p>多个项目用逗号分隔开。</p>
 
-    <div id="aplayer-xDTPahnn" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-dojPPRPG" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
     ></div>]]></content>
       <categories>
@@ -470,21 +458,6 @@
       <tags>
         <tag>Markdown</tag>
         <tag>Markdownlint</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>思维导图测试</title>
-    <url>/2020/04/24/2020-04-21-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="思维导图测试"><a href="#思维导图测试" class="headerlink" title="思维导图测试"></a>思维导图测试</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-
-    <div id="aplayer-gSjJNdKu" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="78324383" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="240px" data-preload="none" data-theme="#ad7a86"
-    ></div>]]></content>
-      <categories>
-        <category>思维导图</category>
-      </categories>
-      <tags>
-        <tag>思维导图</tag>
       </tags>
   </entry>
   <entry>
@@ -661,6 +634,33 @@
       </tags>
   </entry>
   <entry>
+    <title>VS Code中配置Github</title>
+    <url>/2020/04/21/2020-04-21-VS%20Code%E4%B8%AD%E9%85%8D%E7%BD%AEGitHub/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>配置步骤：</p>
+<h2 id="1-配置Git"><a href="#1-配置Git" class="headerlink" title="1. 配置Git"></a>1. 配置Git</h2><p>安装最新版git后，命令行输入</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">git config --global user.name 你的用户名  </span><br><span class="line">* git config --global user.email 你的邮箱</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2-Github设置"><a href="#2-Github设置" class="headerlink" title="2. Github设置"></a>2. Github设置</h2><p>在GitHub中新建一个空仓库（新项目）</p>
+<p>确认后显示ssh地址  </p>
+<p>首先在本地新建一个目录，这里git的操作要在这个新建的目录下操作（在这个文件夹中右键选择git Bash here），在Git Bash中依次运行下列代码</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> "# vscode-demo" &gt;&gt; README.<span class="built_in">md</span>  </span><br><span class="line">git init  </span><br><span class="line">git add README.<span class="built_in">md</span>  </span><br><span class="line">git commit -m "first commit"  </span><br><span class="line">git remote add origin git@github.com:plusczh/vscode-demo.git  </span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>如果在输出最后一行报错 fatal:Could not read from remote repository<br>则需要设置SSH key<br>右上角个人图标—Settings—左边栏SSH and GPG keys—New SSH key<br>title随便取，密码设置如下  </p>
+<p>执行这个命令（在git bash中）</p>
+<p>按下三次回车，看到泡泡一样的东西出现，说明安装成功<br>再键入cat ~/.ssh/id_rsa.pub，得到的一串字符输入到新建SSH时的密码栏<br>设置好SSH key，重新运行上面那段命令，刷新Github页面就能看到仓库名</p>
+<h2 id="3-vscode设置"><a href="#3-vscode设置" class="headerlink" title="3. vscode设置"></a>3. vscode设置</h2><p>在vscode中打开那个在github中库托管的文件夹</p>
+<p>步骤：</p>
+<p>打开源代码管理栏<br>输入提交信息（注释）<br>提交<br>点开选择推送<br>当检测到有文件更改时更改栏才会有显示，才可以提交<br>push的过程是不用输入密码的，如果想有更好的git管理体验，可以在插件商店寻找相关插件。</p>
+]]></content>
+      <categories>
+        <category>VS Code</category>
+      </categories>
+      <tags>
+        <tag>VS Code</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</title>
     <url>/2020/04/21/2020-04-21-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8Vs%20code%E4%B8%8A%E4%BC%A0github%E9%9C%80%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%92%8C%E7%94%A8%E6%88%B7%E5%90%8D%E8%A7%A3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="解决使用VS-Code上传Github每次都需要输入密码和用户名的问题"><a href="#解决使用VS-Code上传Github每次都需要输入密码和用户名的问题" class="headerlink" title="解决使用VS Code上传Github每次都需要输入密码和用户名的问题"></a>解决使用VS Code上传Github每次都需要输入密码和用户名的问题</h1><p>使用下面的命令可以解决</p>
@@ -733,43 +733,6 @@
       <tags>
         <tag>建设工程施工管理</tag>
         <tag>二级建造师</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo中如何设置“阅读全文”</title>
-    <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
-<ol>
-<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
-</ol>
-<a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
-<ol start="2">
-<li><p>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
-</li>
-<li><p>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-
-<p>特别注意的是在Next的高版本上<br>next 7.6版文档本关于设置阅读全文，首先要下载插件 然后在主题配置文件_config.yml配置下就好了。</p>
-<p>一，在博客目录下执行</p>
-<p>npm install hexo-excerpt –save</p>
-<p>二，在站点配置文件_config.yml添加</p>
-<p>excerpt:<br>depth: 10<br>excerpt_excludes: []<br>more_excludes: []<br>hideWholePostExcerpts: true</p>
-<p>next7.6最新文档添加链接描述</p>
-<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>设置</tag>
-        <tag>阅读全文</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,25 +978,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/25/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>Hexo中如何设置“阅读全文”</title>
+    <url>/2020/04/25/2020-04-25-Hexo%E4%B8%AD%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E2%80%9C%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87%E2%80%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近使用<a href="https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io%2Fzh-cn%2Fdocs%2F" target="_blank" rel="noopener">Hexo</a>搭建了自己的博客，并且使用了简洁但是强大的<a href="https://link.jianshu.com/?t=http%3A%2F%2Ftheme-next.iissnan.com%2Fgetting-started.html" target="_blank" rel="noopener">NexT</a>主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接<strong>阅读全文</strong>来进入文章的详情页。效果请看 <a href="https://little-happypig.github.io/">我的小窝</a></p>
+<ol>
+<li>在文章中使用<code>&lt; !--more--&gt;</code> 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加 <code>&lt; !--more--&gt;</code> 标签，使用灵活，也是Hexo推荐的方法。</li>
+</ol>
+<a id="more"></a>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-ec93f0ac69d07b21.PNG" alt="img"></p>
+<ol start="2">
+<li><p>在文章中的<code>front-matter</code>中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2352140-67c6e1edb5695035.PNG" alt="img"></p>
+</li>
+<li><p>自动形成摘要，在<strong>主题配置文件</strong>中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>特别注意的是在Next的高版本上<br>next 7.6版文档本关于设置阅读全文，首先要下载插件 然后在主题配置文件_config.yml配置下就好了。</p>
+<p>一，在博客目录下执行</p>
+<p>npm install hexo-excerpt –save</p>
+<p>二，在站点配置文件_config.yml添加</p>
+<p>excerpt:<br>depth: 10<br>excerpt_excludes: []<br>more_excludes: []<br>hideWholePostExcerpts: true</p>
+<p>next7.6最新文档添加链接描述</p>
+<p>以上方法不行的话 在博客配置文件 _config.yml里 excerpt_description 改为true</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-			<script>
-				console.error("TypeError: Cannot read property '_id' of undefined");
-			</script>]]></content>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>设置</tag>
+        <tag>阅读全文</tag>
+      </tags>
   </entry>
   <entry>
     <title>更改Hexo Next主题的fontawesome版本至最新</title>
@@ -1053,5 +1032,26 @@
         <tag>Next主题</tag>
         <tag>fontawesome</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/04/25/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+			<script>
+				console.error("TypeError: Cannot read property '_id' of undefined");
+			</script>]]></content>
   </entry>
 </search>
